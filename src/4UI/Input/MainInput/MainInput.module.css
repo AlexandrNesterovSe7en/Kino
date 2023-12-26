@@ -1,0 +1,12 @@
+
+
+.mainInput {
+    font-weight: 600;
+    width: 300px;
+    background: #3C3C3C;
+    border: none;
+    border-radius: 30px;
+    padding: 10px;
+    outline: none;
+    color: white;
+}

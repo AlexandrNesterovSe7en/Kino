@@ -1,0 +1,12 @@
+
+
+.mainButton {
+    font-size: 20px;
+    font-weight: 600;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 50px;
+    color: white;
+    background: linear-gradient(to right, #481FE8, #7A5AF5, #CDC2F4 100%);
+    cursor: pointer;
+}
