@@ -8,7 +8,6 @@ const MainPage = () => {
         <>
             <div>
                 Main Page
-                <SearchInput />
             </div>
         </>
     );

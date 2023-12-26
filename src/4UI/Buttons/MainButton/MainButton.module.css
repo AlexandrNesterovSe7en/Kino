@@ -1,9 +1,8 @@
-
-
 .mainButton {
-    font-size: 20px;
-    font-weight: 600;
-    padding: 10px 20px;
+    font-size: clamp(1rem, -0.75rem + 4.667vw, 1.875rem);
+    font-weight: 700;
+    line-height: 36px;
+    padding: max(12px, 1.18vw) max(20px, 2.12vw);
     border: none;
     border-radius: 50px;
     color: white;

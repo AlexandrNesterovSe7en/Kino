@@ -1,12 +1,11 @@
-
-
 .mainInput {
-    font-weight: 600;
-    width: 300px;
+    font-size: clamp(1rem, -0.75rem + 4.667vw, 1.875rem);
+    width: clamp(18rem, -24.813rem + 137vw, 52.25rem);
+    font-weight: 700;
     background: #3C3C3C;
     border: none;
-    border-radius: 30px;
-    padding: 10px;
+    border-radius: 50px;
+    padding: max(12px, 1.18vw) max(20px, 2.12vw);
     outline: none;
     color: white;
 }

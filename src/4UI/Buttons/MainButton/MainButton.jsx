@@ -1,12 +1,9 @@
-
 import cl from "./MainButton.module.css";
 
-const MainButton = ({ text }) => {
-    return ( 
-        <div>
-            <button className={cl.mainButton}>{text}</button>
-        </div>
-     );
+const MainButton = ({ children, className, ...props }) => {
+    return (
+        <button {...props} className={cl.mainButton + ' ' + className}> {children} </button>
+    );
 }
- 
+
 export default MainButton;
