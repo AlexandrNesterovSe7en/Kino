@@ -1,7 +1,4 @@
-
-import Header from "../../2MODULES/Header/Header";
-
-
+import Header from "../../../2MODULES/Header/Header";
 
 const MainPage = () => {
     return (
