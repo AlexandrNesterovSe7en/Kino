@@ -1,0 +1,35 @@
+
+
+.footerWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    border-top: 1px solid #404040;
+    padding: 20px;
+}
+
+.whoWorks {
+    color: rgb(209, 209, 209);
+}
+
+.outContacts {
+    color: #737373;
+}
+
+.authors {
+    display: flex;
+    gap: 15px;
+}
+
+.author {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.author a img {
+    width: 25px;
+}
