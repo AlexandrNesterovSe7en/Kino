@@ -1,0 +1,31 @@
+/* Контейнер для всей регистрации */
+.container_Registration {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+/* Отступ у всех дочерних элементов Контйнера 1-ой вложенности */
+.container_Registration > * {
+    margin-top: 33px;
+}
+
+.h2_Registration__Header {
+    font-size: clamp(2.188rem, -2.188rem + 11.667vw, 4.375rem);
+}
+
+
+.p_Registration__Alternate_Join {
+    font-size: 20px;
+}
+.p_Registration__Alternate_Join > a {
+    color: #0085FF;
+    cursor: pointer;
+    text-decoration: none;
+}
+.check{
+    background-color: #fff;
+}
