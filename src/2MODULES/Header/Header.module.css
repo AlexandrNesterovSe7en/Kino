@@ -1,0 +1,27 @@
+
+
+
+.header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 600px;
+    -webkit-box-shadow: 0px -81px 37px -6px #111111 inset;
+    -moz-box-shadow: 0px -81px 37px -6px #111111 inset;
+    box-shadow: 0px -81px 37px -6px #111111 inset;
+}
+
+.bgImg {
+    position: absolute;
+    width: 100%;
+    height: 600px;
+    filter: brightness(0.3);
+    z-index: -1;
+}
+
+.navBar {
+    position: absolute;
+    margin-top: 20px;
+}
+

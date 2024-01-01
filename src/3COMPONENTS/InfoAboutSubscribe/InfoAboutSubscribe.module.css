@@ -1,0 +1,17 @@
+
+
+
+
+.accessWrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 150px;
+}
+
+.accessText {
+    font-size: 45px;
+    text-align: center;
+    width: 700px;
+}
