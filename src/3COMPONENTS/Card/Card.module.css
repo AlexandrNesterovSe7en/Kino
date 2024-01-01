@@ -1,6 +1,27 @@
 
 
 
+
+
+.cardWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 160px;
+}
+
+.cardDescWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
 .img {
     border-radius: 10px;
+}
+
+.inSubscribe {
+    color: #7A5AF5;
+    font-weight: 700;
+    font-size: 14px;
 }
