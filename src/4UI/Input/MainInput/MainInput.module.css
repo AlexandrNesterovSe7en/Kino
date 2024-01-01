@@ -1,6 +1,6 @@
 .mainInput {
-    font-size: clamp(1rem, -0.75rem + 4.667vw, 1.875rem);
-    width: clamp(18rem, -24.813rem + 137vw, 52.25rem);
+    font-size: clamp(1rem, -0.75rem + 4.667vw, 1.575rem);
+    width: clamp(18rem, -24.813rem + 137vw, 41.25rem);
     font-weight: 700;
     background: #3C3C3C;
     border: none;
