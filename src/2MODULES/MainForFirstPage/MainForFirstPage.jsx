@@ -1,7 +1,4 @@
 import StringMovies from "../../3COMPONENTS/StringMovies/StringMovies";
-import movieImg from "../../4UI/Img/Frostbitten.jpg"
-import secondMovieImg from "../../4UI/Img/difficultTeenagers.jpg"
-import thirdMovieImg from "../../4UI/Img/fearlessFlyers.jpg";
 import cl from "./MainForFirstPage.module.css";
 
 

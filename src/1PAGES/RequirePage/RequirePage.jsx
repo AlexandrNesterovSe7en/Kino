@@ -12,7 +12,7 @@ const RequirePage = () => {
                         <Outlet />
                     </>
                     :
-                    <Navigate to='/signUp' />
+                    <Navigate to='/signIn' />
             }
         </>
     );
