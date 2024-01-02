@@ -5,11 +5,11 @@ import MainForFirstPage from "../../../2MODULES/MainForFirstPage/MainForFirstPag
 
 const MainPage = () => {
     return (
-        <div>
+        <>
             <Header />
             <MainForFirstPage />
             <FooterForFirstPage />
-        </div>
+        </>
     );
 };
 
