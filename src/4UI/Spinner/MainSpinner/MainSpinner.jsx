@@ -12,3 +12,4 @@ const MainSpinner = ({ className }) => {
 }
  
 export default MainSpinner;
+

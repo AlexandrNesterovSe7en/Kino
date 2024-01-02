@@ -3,7 +3,7 @@ import cl from "./Card.module.css"
 
 
 
-const Card = ({ img, title }) => {
+const Card = ({ img, title, inSub }) => {
     return ( 
         <div className={cl.cardWrapper}>
             <div className={cl.imgWrapper}>
@@ -11,7 +11,7 @@ const Card = ({ img, title }) => {
             </div>
             <div className={cl.cardDescWrapper}>
                 <h4>{title}</h4>
-                <p className={cl.inSubscribe}>В подписке</p>
+                <p className={cl.inSubscribe}>{inSub ? "В подписке" : "Бесплатно"}</p>
             </div>
         </div>
      );
