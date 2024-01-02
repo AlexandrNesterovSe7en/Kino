@@ -6,18 +6,31 @@ import cl from "./MainForFirstPage.module.css";
 
 
 
-const MainForFirstPage = () => {
+const MainForFirstPage = ({ fighters, serials }) => {
+
+
+    // return (
+    //     <main>
+    //         {
+    //             data.map(movie => {
+    //                 return (
+    //                     <StringMovies firstImg={movie.img} secondImg={movie.img} thirdImg={movie.img} />
+    //                 )
+    //             })
+    //         }
+    //     </main>
+    // )
+
     return (
         <main className={cl.mainWrapper}>
-            <StringMovies firstImg={movieImg} secondImg={movieImg} thirdImg={movieImg} fourthImg={movieImg} fifthImg={movieImg} sixthImg={movieImg}
-                            firstTitle="Отмороженные" secondTitle="Отмороженные" thirdTitle="Отмороженные" fourthTitle="Отмороженные" fifthTitle="Отмороженные" sixthTitle="Отмороженные"
-                            path="/Categories" category="Новинки 2023-2024"/>
-            <StringMovies firstImg={secondMovieImg} secondImg={secondMovieImg} thirdImg={secondMovieImg} fourthImg={secondMovieImg} fifthImg={secondMovieImg} sixthImg={secondMovieImg}
+            <StringMovies data={fighters} path="/Categories" category="Боевики"/>
+            <StringMovies data={serials} path="/Categories" category="Сериалы"/>
+            {/* <StringMovies data={data} firstImg={secondMovieImg} secondImg={secondMovieImg} thirdImg={secondMovieImg} fourthImg={secondMovieImg} fifthImg={secondMovieImg} sixthImg={secondMovieImg}
                             firstTitle="Трудные подростки" secondTitle="Трудные подростки" thirdTitle="Трудные подростки" fourthTitle="Трудные подростки" fifthTitle="Трудные подростки" sixthTitle="Трудные подростки"
                             path="/Categories" category="Сериалы"/>
-            <StringMovies firstImg={thirdMovieImg} secondImg={thirdMovieImg} thirdImg={thirdMovieImg} fourthImg={thirdMovieImg} fifthImg={thirdMovieImg} sixthImg={thirdMovieImg}
+            <StringMovies data={data} firstImg={thirdMovieImg} secondImg={thirdMovieImg} thirdImg={thirdMovieImg} fourthImg={thirdMovieImg} fifthImg={thirdMovieImg} sixthImg={thirdMovieImg}
                             firstTitle="Бесстрашные летуны" secondTitle="Бесстрашные летуны" thirdTitle="Бесстрашные летуны" fourthTitle="Бесстрашные летуны" fifthTitle="Бесстрашные летуны" sixthTitle="Бесстрашные летуны"
-                            path="/Categories" category="Рекомендации"/>
+                            path="/Categories" category="Рекомендации"/> */}
         </main>
     )
 }

@@ -2,6 +2,7 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from 'firebase/auth'
+import { getDatabase } from "firebase/database";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -14,10 +15,12 @@ const firebaseConfig = {
     storageBucket: "kinopoisk-e5c8f.appspot.com",
     messagingSenderId: "989760247964",
     appId: "1:989760247964:web:c35aadc73191593b51f559",
-    measurementId: "G-8SC1WKKP1N"
+    measurementId: "G-8SC1WKKP1N",
+    databaseURL: "https://kinopoisk-e5c8f-default-rtdb.europe-west1.firebasedatabase.app/"
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+export const database = getDatabase(app);
 export const auth = getAuth();
