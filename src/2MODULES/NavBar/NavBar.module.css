@@ -3,5 +3,15 @@
 
 .navBar {
     display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 50px;
+}
+
+.navigation {
+    display: flex;
     gap: 20px;
+}
+
+.signInLink {
 }

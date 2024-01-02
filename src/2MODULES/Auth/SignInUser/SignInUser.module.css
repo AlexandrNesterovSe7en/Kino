@@ -14,7 +14,7 @@
 }
 
 .h2_Registration__Header {
-    font-size: clamp(2.188rem, -2.188rem + 11.667vw, 4.375rem);
+    font-size: clamp(2.188rem, -2.188rem + 11.667vw, 3.375rem);
 }
 
 
@@ -28,4 +28,22 @@
 }
 .check{
     background-color: #fff;
+}
+
+.p_Registration__Alternate_Join {
+    font-size: 20px;
+}
+
+.p_Registration__Alternate_Join > a {
+    color: #0085FF;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.signInInput {
+    width: clamp(18rem, -24.813rem + 137vw, 35.25rem);
+}
+
+.signInButton {
+    padding: max(12px, 0.18vw) max(20px, 4.12vw);
 }
