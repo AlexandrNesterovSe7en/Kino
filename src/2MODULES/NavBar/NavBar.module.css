@@ -13,7 +13,7 @@
 
 .signInLink {}
 
-@media (max-width:410px) {
+@media (max-width:530px) {
     .header_burger{
         display: block;
         position: fixed;

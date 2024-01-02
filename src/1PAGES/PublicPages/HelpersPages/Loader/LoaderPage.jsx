@@ -2,7 +2,7 @@ import { Outlet } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { auth } from "../../../../FireBase/FireBase";
-import { loginUser, setLoading } from "../../../../features/currentUserSlice/currentUserSlice";
+import { logOutUser, loginUser, setLoading } from "../../../../features/currentUserSlice/currentUserSlice";
 import { onAuthStateChanged } from "firebase/auth";
 import MainSpinner from '../../../../4UI/Spinner/MainSpinner/MainSpinner';
 import cl from './LoaderPage.module.css';
@@ -22,6 +22,8 @@ const LoaderPage = () => {
                     uid: authUser.uid,
                     email: authUser.email,
                 }));
+            }else {
+                dispatch(logOutUser());
             }
             // загрузка юзера завершена
             dispatch(setLoading(false));

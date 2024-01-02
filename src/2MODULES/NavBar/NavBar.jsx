@@ -48,7 +48,7 @@ const NavBar = ({ className }) => {
                 <div className={cl.signIn}>
                     {
                         currentUser ? 
-                        <button onClick={logOut}>Выйти</button>
+                        <button onClick={logOut} className={cl.logOut}>Выйти</button>
                         :
                         <NavBarLink path="/signIn" text="Войти" className={cl.signInLink}/>
                     }
