@@ -7,6 +7,7 @@
     color: white;
 }
 .active{
-    border-bottom: 2px solid #7A5AF5;
+    padding-bottom: 5px;
+    border-bottom: 3px solid #7A5AF5;
     color: white;
 }
