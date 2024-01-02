@@ -2,7 +2,7 @@ import MainButton from '../../../4UI/Buttons/MainButton/MainButton';
 import MainInput from '../../../4UI/Input/MainInput/MainInput';
 import cl from './Registation.module.css';
 import { useState } from 'react';
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../../FireBase/FireBase';
 import { Link } from 'react-router-dom';
 

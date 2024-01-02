@@ -1,11 +1,12 @@
-
-
-
 .navBarLink {
     color: #b4b4b4;
     text-decoration: none;
 }
 
 .navBarLink:hover {
+    color: white;
+}
+.active{
+    border-bottom: 2px solid #7A5AF5;
     color: white;
 }

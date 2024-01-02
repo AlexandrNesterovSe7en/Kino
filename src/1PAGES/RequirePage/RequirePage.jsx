@@ -8,7 +8,9 @@ const RequirePage = () => {
         <>
             {
                 user ?
-                    <Outlet />
+                    <>
+                        <Outlet />
+                    </>
                     :
                     <Navigate to='/signUp' />
             }

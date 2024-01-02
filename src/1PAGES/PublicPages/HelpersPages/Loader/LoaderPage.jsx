@@ -6,6 +6,7 @@ import { logOutUser, loginUser, setLoading } from "../../../../features/currentU
 import { onAuthStateChanged } from "firebase/auth";
 import MainSpinner from '../../../../4UI/Spinner/MainSpinner/MainSpinner';
 import cl from './LoaderPage.module.css';
+import NavBar from "../../../../2MODULES/NavBar/NavBar";
 
 const LoaderPage = () => {
     const userLoading = useSelector(state => state.currentUser.isLoading);
@@ -22,7 +23,7 @@ const LoaderPage = () => {
                     uid: authUser.uid,
                     email: authUser.email,
                 }));
-            }else {
+            } else {
                 dispatch(logOutUser());
             }
             // загрузка юзера завершена
@@ -35,7 +36,7 @@ const LoaderPage = () => {
         return () => {
             unscribe()
         };
-
+        // eslint-disable-next-line
     }, [])
 
     return (
@@ -45,7 +46,10 @@ const LoaderPage = () => {
                     <MainSpinner />
                 </div>
                 :
-                <Outlet />
+                <>
+                    <NavBar />
+                    <Outlet />
+                </>
             }
         </>
     )
