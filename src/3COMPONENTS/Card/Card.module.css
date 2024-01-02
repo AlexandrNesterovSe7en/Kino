@@ -1,13 +1,8 @@
-
-
-
-
-
 .cardWrapper {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    max-width: 160px;
+    width: 158px;
 }
 
 .cardDescWrapper {

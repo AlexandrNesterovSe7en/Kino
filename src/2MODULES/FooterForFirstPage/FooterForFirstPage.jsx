@@ -13,15 +13,15 @@ const FooterForFirstPage = () => {
             <div className={cl.authors}>
                 <h4 className={cl.author}>
                     Максим 
-                    <a href=""><img src={github} alt="github" /></a>
-                    <a href=""><img src={telegram} alt="telegram" /></a>
-                    <a href=""><img src={vk} alt="vk" /></a>
+                    <a href="/"><img src={github} alt="github" /></a>
+                    <a href="/"><img src={telegram} alt="telegram" /></a>
+                    <a href="/"><img src={vk} alt="vk" /></a>
                 </h4>
                 <h4 className={cl.author}>
                     Александр
-                    <a href=""><img src={github} alt="github" /></a>
-                    <a href=""><img src={telegram} alt="telegram" /></a>
-                    <a href=""><img src={vk} alt="vk" /></a>
+                    <a href="/"><img src={github} alt="github" /></a>
+                    <a href="/"><img src={telegram} alt="telegram" /></a>
+                    <a href="/"><img src={vk} alt="vk" /></a>
                 </h4>
             </div>
         </footer>
