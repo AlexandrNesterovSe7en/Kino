@@ -5,3 +5,7 @@
     color: #b4b4b4;
     text-decoration: none;
 }
+
+.navBarLink:hover {
+    color: white;
+}

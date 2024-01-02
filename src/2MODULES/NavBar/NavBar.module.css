@@ -11,7 +11,18 @@
 }
 
 
-.signInLink {}
+.logOut {
+    color: #b4b4b4;
+    border: none;
+    font-size: 18px;
+    background: transparent;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.logOut:hover {
+    color: white;
+}
 
 @media (max-width:530px) {
     .header_burger{

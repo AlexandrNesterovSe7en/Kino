@@ -13,6 +13,16 @@
 
 .img {
     border-radius: 10px;
+    transition: all 0.2s ease;
+}
+
+.img:hover {
+    transform: scale(1.02);
+}
+
+.imgWrapper {
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 .inSubscribe {
