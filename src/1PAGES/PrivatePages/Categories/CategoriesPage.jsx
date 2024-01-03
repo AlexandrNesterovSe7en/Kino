@@ -1,8 +1,7 @@
-import { Outlet, useSearchParams } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 
 const CategoriesPage = () => {
     const c = 'Categories'
-    const [searchParams, setsearchParams] = useSearchParams();
 
     return (
         <div>

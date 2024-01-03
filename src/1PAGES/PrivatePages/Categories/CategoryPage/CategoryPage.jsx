@@ -17,6 +17,7 @@ const CategoryPage = () => {
         onValue(cat, snapshot => {
             setData(Object.values(snapshot.val()));
         })
+        // eslint-disable-next-line  
     }, [])
 
     return (

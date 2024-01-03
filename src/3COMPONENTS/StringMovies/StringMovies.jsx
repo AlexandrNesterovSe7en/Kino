@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import SeparateCategoryButton from "../../4UI/Buttons/SeparateCategoryButton/SeparateCategoryButton"
-import Card from "../Card/Card";
 import cl from "./StringMovies.module.css";
 import { limitToFirst, onValue, query, ref } from "firebase/database";
 import { database } from "../../FireBase/FireBase";
@@ -16,6 +15,7 @@ const StringMovies = ({ path, categoryText, category }) => {
         onValue(cat, snapshot => {
             setData(Object.values(snapshot.val()));
         })
+        // eslint-disable-next-line
     }, [])
 
     
