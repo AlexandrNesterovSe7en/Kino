@@ -1,15 +1,38 @@
-import { Outlet } from "react-router-dom";
+import { onValue, ref } from "firebase/database";
+import { useEffect, useState } from "react";
+import { Outlet, useParams } from "react-router-dom";
+import { database } from "../../../FireBase/FireBase"
+import RenderCategories from "../../../2MODULES/RenderCategories/RenderCategories";
+import cl from "./CategoriesPage.module.css";
 
 const CategoriesPage = () => {
-    const c = 'Categories'
+
+    const [data, setData] = useState([]);
+    const param = useParams();
+    let show = param.category ? true : false;
+
+
+    useEffect(() => {
+        const cat = ref(database, "/Movies/Cateogries");
+        onValue(cat, snapshot => {
+            setData(Object.keys(snapshot.val()));
+        })
+    }, [])
+
+    console.log(data);
 
     return (
         <div>
             {
-                true ?
+                show ?
                     <Outlet />
                     :
-                    <div>{c}</div>
+                    <div className={cl.categoriesPageWrapper}>
+                        <div className={cl.categoriesPageWrapperInset}>
+                            <h2>Категории</h2>
+                            <RenderCategories data={data}/>
+                        </div>
+                    </div>
             }
         </div>
     );

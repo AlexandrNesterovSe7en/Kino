@@ -10,7 +10,10 @@ const Card = ({ img, title, inSub }) => {
                 <img src={img} alt="card-img" className={cl.img}/>
             </div>
             <div className={cl.cardDescWrapper}>
-                <h4>{title}</h4>
+                <div className={cl.titleWrapper}>
+                    <div className={cl.titleShadow}></div>
+                    <h4>{title}</h4>
+                </div>
                 <p className={cl.inSubscribe}>{inSub ? "В подписке" : "Бесплатно"}</p>
             </div>
         </div>

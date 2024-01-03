@@ -1,0 +1,22 @@
+
+
+
+.categoryLink {
+    text-decoration: none;
+}
+
+.titleWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 0px 20px 1px rgb(220, 220, 220) inset;
+    width: 200px;
+    height: 200px;
+    border-radius: 30px;
+}
+
+.titleWrapper h2 {
+    color: white;
+    font-weight: 700;
+    font-size: 30px;
+}

@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { TRANSLATOR } from "../../../../CONSTANTS/CONSTANTS";
+import { TRANSLATOR_RU_TO_EN } from "../../../../CONSTANTS/CONSTANTS";
 import { useEffect, useState } from "react";
 import { onValue, ref } from "firebase/database";
 import { database } from "../../../../FireBase/FireBase";
@@ -9,7 +9,7 @@ import cl from "./CategoryPage.module.css";
 const CategoryPage = () => {
 
     const param = useParams();
-    const category = TRANSLATOR[param.category];
+    const category = TRANSLATOR_RU_TO_EN[param.category];
     const [data, setData] = useState([]);
 
     useEffect(() => {

@@ -13,3 +13,7 @@
     width: 90%;
     gap: 30px;
 }
+
+.categoryPageWrapperInset h2 {
+    font-size: 33px;
+}
