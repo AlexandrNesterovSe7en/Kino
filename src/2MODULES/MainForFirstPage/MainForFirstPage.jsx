@@ -3,13 +3,13 @@ import cl from "./MainForFirstPage.module.css";
 
 
 
-const MainForFirstPage = ({ fighters, serials, comedies }) => {
+const MainForFirstPage = () => {
 
     return (
         <main className={cl.mainWrapper}>
-            <StringMovies data={fighters} path="/Categories/fighters" category="Боевики"/>
-            <StringMovies data={serials} path="/CategoryPage" category="Сериалы"/>
-            <StringMovies data={comedies} path="/CategoryPage" category="Комедии"/>
+            <StringMovies path="/Categories/Сериалы" categoryText="Сериалы" category="Serials"/>
+            <StringMovies path="/Categories/Боевики" categoryText="Боевики" category="Fighters"/>
+            <StringMovies path="/Categories/Комедии" categoryText="Комедии" category="Сomedies"/>
         </main>
     )
 }

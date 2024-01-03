@@ -4,10 +4,3 @@
     gap: 30px;
     margin-bottom: 60px;
 }
-
-.listMovies {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-}
