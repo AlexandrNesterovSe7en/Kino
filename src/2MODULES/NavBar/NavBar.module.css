@@ -1,5 +1,9 @@
 .navBar {
     margin-top: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: space-between;
     align-items: baseline;
@@ -83,19 +87,19 @@
     }
     .navBar{
         position: fixed;
-        top: -20px;
+        top: -68px;
         left: 0px;
         right: 0px;
-        height: 50vh;
+        height: 500px;
         background-color: #262626;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         gap: 35px;
-        transform: translateY(-40vh);
+        transform: translateY(-400px);
         transition: all 0.3s ease 0s;
     }
     .header_burger.active ~ .navBar{
-        transform: translateY(0vh);
+        transform: translateY(0px);
     }
 }
