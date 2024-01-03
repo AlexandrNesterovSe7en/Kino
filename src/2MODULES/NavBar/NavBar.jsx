@@ -16,9 +16,9 @@ const NavBar = ({ className }) => {
     const currentUser = useSelector(state => state.currentUser.user);
 
     function handleClickActive(e) {
-        if(active === undefined){
+        if (active === undefined) {
             setActive(cl.active);
-        } else{
+        } else {
             setActive(undefined);
         }
     };
@@ -37,7 +37,7 @@ const NavBar = ({ className }) => {
                 <span></span>
             </div>
             <nav className={cl.navBar + ' ' + className}>
-                <div>
+                <div className={cl.helperForCenter}>
 
                 </div>
                 <div onClick={() => active ? handleClickActive() : null} className={cl.navigation}>
@@ -47,10 +47,10 @@ const NavBar = ({ className }) => {
                 </div>
                 <div className={cl.signIn}>
                     {
-                        currentUser ? 
-                        <button onClick={logOut} className={cl.logOut}>Выйти</button>
-                        :
-                        <NavBarLink path="/signIn" text="Войти" className={cl.signInLink}/>
+                        currentUser ?
+                            <button onClick={logOut} className={cl.logOut}>Выйти</button>
+                            :
+                            <NavBarLink path="/signIn" text="Войти" className={cl.signInLink} />
                     }
                 </div>
             </nav>
