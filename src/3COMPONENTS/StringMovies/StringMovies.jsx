@@ -1,4 +1,3 @@
-
 import SeparateCategoryButton from "../../4UI/Buttons/SeparateCategoryButton/SeparateCategoryButton"
 import Card from "../Card/Card";
 import cl from "./StringMovies.module.css";
@@ -6,10 +5,6 @@ import cl from "./StringMovies.module.css";
 
 const StringMovies = ({ path, category, data }) => {
     
-
-
-
-
     return (
         <div className={cl.stringMoviesWrapper}>
             <SeparateCategoryButton path={path} category={category}/>

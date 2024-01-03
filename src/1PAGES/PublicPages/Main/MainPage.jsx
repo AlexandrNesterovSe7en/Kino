@@ -1,5 +1,4 @@
 import { onValue, ref } from "firebase/database";
-import FooterForFirstPage from "../../../2MODULES/FooterForFirstPage/FooterForFirstPage";
 import Header from "../../../2MODULES/Header/Header";
 import MainForFirstPage from "../../../2MODULES/MainForFirstPage/MainForFirstPage";
 import { useEffect, useState } from "react";

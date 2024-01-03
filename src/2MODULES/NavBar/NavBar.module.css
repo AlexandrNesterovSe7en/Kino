@@ -1,19 +1,21 @@
 .navBar {
-    position: absolute;
     margin-top: 20px;
     display: flex;
     justify-content: space-between;
-    width: 100%;
+    align-items: baseline;
     padding: 0 50px;
 }
 
 .navigation {
     display: flex;
     gap: 20px;
-    margin-left: 60px;
 }
-
-
+.signIng{
+    flex-basis: 60px;
+} 
+.helperForCenter{
+    flex-basis: 60px;
+}
 .logOut {
     color: #b4b4b4;
     border: none;
@@ -27,7 +29,10 @@
     color: white;
 }
 
-@media (max-width:530px) {
+@media (max-width:630px) {
+    .helperForCenter{
+        display: none;
+    }
     .header_burger{
         display: block;
         position: fixed;
@@ -72,6 +77,9 @@
     }
     .header_burger.active span{
         transform: scale(0);
+    }
+    .navigation{
+        flex-direction: column;
     }
     .navBar{
         position: fixed;

@@ -7,6 +7,7 @@ import { onAuthStateChanged } from "firebase/auth";
 import MainSpinner from '../../../../4UI/Spinner/MainSpinner/MainSpinner';
 import cl from './LoaderPage.module.css';
 import NavBar from "../../../../2MODULES/NavBar/NavBar";
+import FooterForFirstPage from "../../../../2MODULES/FooterForFirstPage/FooterForFirstPage";
 
 const LoaderPage = () => {
     const userLoading = useSelector(state => state.currentUser.isLoading);
@@ -49,6 +50,7 @@ const LoaderPage = () => {
                 <>
                     <NavBar />
                     <Outlet />
+                    <FooterForFirstPage />
                 </>
             }
         </>
