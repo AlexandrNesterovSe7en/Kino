@@ -38,7 +38,6 @@ const MainPage = () => {
         <>
             <Header />
             <MainForFirstPage fighters={fighters} serials={serials} comedies={comedies}/>
-            <FooterForFirstPage />
         </>
     );
 };
