@@ -15,8 +15,8 @@ const StringMovies = ({ path, category, data }) => {
             <SeparateCategoryButton path={path} category={category}/>
             <div className={cl.listMovies}>
                 {
-                    data.map(movie => {
-                        return movie.id < 7 ? <Card img={movie.img} title={movie.title} inSub={movie.inSub}/> : null;
+                    data.map((movie, index) => {
+                        return index < 6 ? <Card key={movie.id} img={movie.img} title={movie.title} inSub={movie.inSub}/> : null;
                     })
                 }
                 {/* <Card img={firstImg} title={firstTitle}/>
