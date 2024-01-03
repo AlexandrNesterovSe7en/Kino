@@ -1,20 +1,28 @@
+import { useEffect, useState } from "react";
 import SeparateCategoryButton from "../../4UI/Buttons/SeparateCategoryButton/SeparateCategoryButton"
 import Card from "../Card/Card";
 import cl from "./StringMovies.module.css";
+import { limitToFirst, onValue, query, ref } from "firebase/database";
+import { database } from "../../FireBase/FireBase";
+import RenderMovies from "../../2MODULES/RenderMovies/RenderMovies";
 
 
-const StringMovies = ({ path, category, data }) => {
+const StringMovies = ({ path, categoryText, category }) => {
+
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        const cat = query(ref(database, `/Movies/Cateogries/${category}`), limitToFirst(6));
+        onValue(cat, snapshot => {
+            setData(Object.values(snapshot.val()));
+        })
+    }, [])
+
     
     return (
         <div className={cl.stringMoviesWrapper}>
-            <SeparateCategoryButton path={path} category={category}/>
-            <div className={cl.listMovies}>
-                {
-                    data.map(movie => {
-                        return movie.id < 7 ? <Card img={movie.img} title={movie.title} inSub={movie.inSub} key={movie.id}/> : null;
-                    })
-                }
-            </div>
+            <SeparateCategoryButton path={path} category={categoryText}/>
+            <RenderMovies data={data} />
         </div>
     )
 }
