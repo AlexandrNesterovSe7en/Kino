@@ -78,6 +78,9 @@
     .header_burger.active span{
         transform: scale(0);
     }
+    .navigation{
+        flex-direction: column;
+    }
     .navBar{
         position: fixed;
         top: -20px;
