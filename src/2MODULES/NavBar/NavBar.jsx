@@ -40,7 +40,7 @@ const NavBar = ({ className }) => {
                 <div>
 
                 </div>
-                <div onClick={handleClickActive} className={cl.navigation}>
+                <div onClick={() => active ? handleClickActive() : null} className={cl.navigation}>
                     <NavBarLink path="/" text="Главная" />
                     <NavBarLink path="/Categories" text="Категории" />
                     <NavBarLink path="/FavoritePage" text="Избранное" />
