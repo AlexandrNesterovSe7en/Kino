@@ -4,8 +4,6 @@ const CategoriesPage = () => {
     const c = 'Categories'
     const [searchParams, setsearchParams] = useSearchParams();
 
-    console.log(searchParams, setsearchParams)
-
     return (
         <div>
             {
