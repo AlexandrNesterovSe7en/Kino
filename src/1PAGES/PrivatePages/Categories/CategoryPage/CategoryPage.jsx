@@ -1,10 +1,12 @@
+import { useParams } from "react-router-dom";
 
-
-
-const CategoryPage = ({ category }) => {
+const CategoryPage = () => {
+    const param = useParams();
+    
+    console.log(param.category)
     return (
         <div>
-            <h2>{category}</h2>
+            Category
         </div>
     );
 };

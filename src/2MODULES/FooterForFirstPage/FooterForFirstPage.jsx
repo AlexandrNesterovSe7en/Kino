@@ -1,4 +1,3 @@
-
 import cl from "./FooterForFirstPage.module.css";
 import github from "../../4UI/Img/githubIcon.png";
 import telegram from "../../4UI/Img/telegramIcon.png";
