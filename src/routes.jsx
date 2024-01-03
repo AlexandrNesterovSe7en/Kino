@@ -48,6 +48,12 @@ const routes = createHashRouter(
                     let ListFilmsPage = await import('./1PAGES/PrivatePages/ListFilms/ListFilmsPage')
                     return { Component: ListFilmsPage.default }
                 }} />
+
+                {/* Category Page - Страница с отдельной категорией, private route */}
+                <Route path='/CategoryPage' lazy={async function () {
+                    let CategoryPage = await import('./1PAGES/PrivatePages/Categories/CategoryPage/CategoryPage')
+                    return { Component: CategoryPage.default }
+                }} />
             </Route>
         </Route>
     )

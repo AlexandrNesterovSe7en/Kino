@@ -10,6 +10,7 @@ const MainPage = () => {
 
     const [fighters, setFighters] = useState([]);
     const [serials, setSerials] = useState([]);
+    const [comedies, setComedies] = useState([]);
 
 
 
@@ -25,6 +26,11 @@ const MainPage = () => {
         onValue(serial, snapshot => {
             setSerials(Object.values(snapshot.val()));
         })
+        
+        const comedy = ref(database, "/Movies/Cateogries/Сomedies");
+        onValue(comedy, snapshot => {
+            setComedies(Object.values(snapshot.val()));
+        })
 
     }, [])
     
@@ -32,7 +38,7 @@ const MainPage = () => {
     return (
         <>
             <Header />
-            <MainForFirstPage fighters={fighters} serials={serials}/>
+            <MainForFirstPage fighters={fighters} serials={serials} comedies={comedies}/>
             <FooterForFirstPage />
         </>
     );

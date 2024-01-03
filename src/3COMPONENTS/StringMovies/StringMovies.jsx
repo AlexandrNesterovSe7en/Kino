@@ -16,15 +16,9 @@ const StringMovies = ({ path, category, data }) => {
             <div className={cl.listMovies}>
                 {
                     data.map(movie => {
-                        return movie.id < 7 ? <Card img={movie.img} title={movie.title} inSub={movie.inSub}/> : null;
+                        return movie.id < 7 ? <Card img={movie.img} title={movie.title} inSub={movie.inSub} key={movie.id}/> : null;
                     })
                 }
-                {/* <Card img={firstImg} title={firstTitle}/>
-                <Card img={secondImg} title={secondTitle}/>
-                <Card img={thirdImg} title={thirdTitle}/>
-                <Card img={fourthImg} title={fourthTitle}/>
-                <Card img={fifthImg} title={fifthTitle}/>
-                <Card img={sixthImg} title={sixthTitle}/> */}
             </div>
         </div>
     )
