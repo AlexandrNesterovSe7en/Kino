@@ -9,14 +9,28 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 0px 0px 20px 1px #1D79D2 inset;
+    box-shadow: 0px 0px 20px 1px #000000 inset;
+    /* background-image: linear-gradient(to right top, rgb(1 134 218), rgb(182 49 167)); */
+    background-color: #1D79D2;
     width: 200px;
     height: 200px;
     border-radius: 30px;
+    transition: all 0.4s ease;
+    filter: contrast(200%);
+    filter: brightness(120%);
 }
 
 .titleWrapper h2 {
-    color: white;
+    color: rgb(220, 220, 220);
     font-weight: 700;
     font-size: 30px;
+    transition: all 0.2s ease;
+}
+
+.titleWrapper:hover {
+    box-shadow: 0px 0px 10px 4px #ffffff inset;
+}
+
+.titleWrapper:hover h2 {
+    color: white;
 }
