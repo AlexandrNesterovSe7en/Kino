@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import cl from "./SeparateCategoryButton.module.css";
 
 
-
+// Ссылка на категорию находящаяся на главной странице
 const SeparateCategoryButton = ({ path, category }) => {
     return ( 
         <Link to={path} className={cl.categoryLink}>

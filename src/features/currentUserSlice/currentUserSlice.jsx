@@ -7,10 +7,12 @@ const currentUserSlice = createSlice({
         isLoading: true,
     },
     reducers: {
+        // Вход в аккаунт
         loginUser: (state, action) => {
             state.user = action.payload;
         },
 
+        // Выход из аккаунта
         logOutUser: (state) => {
             state.user = null;
         },

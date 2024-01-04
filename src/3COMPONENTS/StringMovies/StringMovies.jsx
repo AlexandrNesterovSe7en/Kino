@@ -11,6 +11,7 @@ const StringMovies = ({ path, categoryText, category }) => {
     const [data, setData] = useState([]);
 
     useEffect(() => {
+        // Получание 6-ти фильмов из БД
         const cat = query(ref(database, `/Movies/Cateogries/${category}`), limitToFirst(6));
         onValue(cat, snapshot => {
             setData(Object.values(snapshot.val()));

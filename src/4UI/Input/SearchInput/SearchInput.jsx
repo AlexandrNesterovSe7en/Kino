@@ -1,5 +1,6 @@
 import cl from "./SearchInput.module.css";
 
+// Строка поиска
 const SearchInput = () => {
     return (
         <div class={cl.searchBox}>

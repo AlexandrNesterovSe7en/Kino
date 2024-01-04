@@ -3,7 +3,7 @@ import Registration from "../../../../2MODULES/Auth/Registration/Registration";
 import { Navigate, useNavigate } from "react-router-dom";
 import { useLayoutEffect } from "react";
 
-
+// Проверяет зарегестрирован ли пользователь
 const AuthPage = () => {
     const currentUser = useSelector(state => state.currentUser.user);
     const navigate = useNavigate();

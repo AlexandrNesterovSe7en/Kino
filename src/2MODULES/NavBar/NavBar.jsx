@@ -1,8 +1,6 @@
 
 import { useSelector } from "react-redux";
-
 import { useState } from "react";
-
 import NavBarLink from "../../4UI/Buttons/NavBarLink/NavBarLink";
 import cl from "./NavBar.module.css";
 import { signOut } from "firebase/auth";
@@ -25,6 +23,7 @@ const NavBar = ({ className }) => {
     };
 
     function logOut() {
+        // Отвечает за выход из аккаунта
         signOut(auth).then(() => {
 
         }).catch(err => {
@@ -38,15 +37,21 @@ const NavBar = ({ className }) => {
                 <span></span>
             </div>
             <nav className={cl.navBar + ' ' + className}>
+                {/*  Костыль)
+                     По факту должен быть логотип */}
                 <div className={cl.helperForCenter}>
 
                 </div>
+
+                {/* Главная навигация сайта */}
                 <div onClick={() => active ? handleClickActive() : null} className={cl.navigation}>
                     <NavBarLink path="/" text="Главная" />
                     <NavBarLink path="/Categories" text="Категории" />
                     <NavBarLink path="/FavoritePage" text="Избранное" />
                     <SearchInput />
                 </div>
+
+                {/* Отображение кнопки Войти/Выйти */}
                 <div className={cl.signIn}>
                     {
                         currentUser ?

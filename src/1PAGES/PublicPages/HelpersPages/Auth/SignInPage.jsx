@@ -3,6 +3,8 @@ import { useNavigate } from "react-router-dom";
 import { useLayoutEffect } from "react";
 import SignInUser from '../../../../2MODULES/Auth/SignInUser/SignInUser'
 
+
+// Страница входа
 const SignInPage = () => {
     const currentUser = useSelector(state => state.currentUser.user);
     const navigate = useNavigate();

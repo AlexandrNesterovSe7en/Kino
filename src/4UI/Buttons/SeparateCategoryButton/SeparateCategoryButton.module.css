@@ -3,8 +3,8 @@
 
 .categoryLink {
     display: flex;
-    gap: 5px;
     align-items: center;
+    gap: 5px;
     color: white;
     text-decoration: none;
 }

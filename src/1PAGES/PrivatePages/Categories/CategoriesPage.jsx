@@ -13,6 +13,7 @@ const CategoriesPage = () => {
 
 
     useEffect(() => {
+        // Получение данных из БД
         const cat = ref(database, "/Movies/Cateogries");
         onValue(cat, snapshot => {
             setData(Object.keys(snapshot.val()));

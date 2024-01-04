@@ -6,24 +6,21 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* box-shadow: 0px 0px 20px 1px #000000 inset; */
     width: 200px;
     height: 200px;
+    border: 3px solid rgba(29, 121, 210, 0.7);
     border-radius: 30px;
     transition: all 0.4s ease;
-
     background: rgba(255, 255, 255, 0.05);
-    border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0px);
-    border: 3px solid rgba(29, 121, 210, 0.7);
 }
 
 .titleWrapper h2 {
-    color: rgb(220, 220, 220);
     font-weight: 700;
     font-size: 30px;
+    color: rgb(220, 220, 220);
     transition: all 0.2s ease;
 }
 
