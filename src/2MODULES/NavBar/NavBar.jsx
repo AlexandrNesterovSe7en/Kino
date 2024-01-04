@@ -7,6 +7,7 @@ import NavBarLink from "../../4UI/Buttons/NavBarLink/NavBarLink";
 import cl from "./NavBar.module.css";
 import { signOut } from "firebase/auth";
 import { auth } from "../../FireBase/FireBase";
+import SearchInput from "../../4UI/Input/SearchInput/SearchInput";
 
 
 
@@ -44,6 +45,7 @@ const NavBar = ({ className }) => {
                     <NavBarLink path="/" text="Главная" />
                     <NavBarLink path="/Categories" text="Категории" />
                     <NavBarLink path="/FavoritePage" text="Избранное" />
+                    <SearchInput />
                 </div>
                 <div className={cl.signIn}>
                     {

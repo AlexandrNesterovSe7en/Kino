@@ -1,12 +1,77 @@
 
 
-.searchInput {
-    font-weight: 600;
-    width: 300px;
-    background: #ffffff;
-    border: none;
-    border-radius: 30px;
-    padding: 10px;
+.searchBox{
+    width: fit-content;
+    height: fit-content;
+    position: relative;
+  }
+
+  .searchBox svg {
+    z-index: 999;
+    fill: #b4b4b4;
+  }
+
+  .inputSearch{
+    width: 0;
+    height: 0;
+    position: absolute;
+    bottom: -33px;
+    right: -35px;
+    border-style: none;
+    font-size: 15px;
+    letter-spacing: 2px;
     outline: none;
-    color: #B4B4B4;
-}
+    border-radius: 25px;
+    transition: all .3s ease-in-out;
+    background: transparent;
+    font-weight: 700;
+    letter-spacing: 1px;
+    z-index: 1;
+  }
+  .inputSearch::placeholder{
+    color:#b4b4b4;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  .btnSearch{
+    width: 50px;
+    height: 50px;
+    border-style: none;
+    font-size: 20px;
+    font-weight: bold;
+    outline: none;
+    cursor: pointer;
+    border-radius: 50%;
+    position: absolute;
+    right: -38px;
+    bottom: -39px;
+    color:#ffffff ;
+    background-color:transparent;
+    pointer-events: painted;  
+    z-index: 999;
+  }
+
+
+  .btnSearch:focus ~ .inputSearch{
+    width: 400px;
+    padding: 20px 50px 20px 20px;
+    border-radius: 0px;
+    background-color: transparent;
+    transition: all .3s ease;
+    background: white;
+    border-radius: 10px;
+  }
+
+
+
+  .inputSearch:focus{
+    width: 400px;
+    padding: 20px 50px 20px 20px;
+    border-radius: 0px;
+    background-color: transparent;
+    transition: all 500ms ease;
+    background: white;
+    border-radius: 10px;
+  }
+  

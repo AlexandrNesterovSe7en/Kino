@@ -2,7 +2,28 @@
 
 
 .categoryLink {
-    display: inline-block;
+    display: flex;
+    gap: 5px;
+    align-items: center;
     color: white;
     text-decoration: none;
+}
+
+.categoryLink h2 {
+    display: inline-block;
+    transition: all 0.2s ease;
+}
+
+.categoryLink:hover h2 {
+    color: #59acff;
+}
+
+.categoryLink svg {
+    margin-top: 3px;
+    transition: all 0.2s ease;
+}
+
+.categoryLink:hover svg {
+    transform: translateX(3px);
+    fill: #59acff;
 }
