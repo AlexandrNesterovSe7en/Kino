@@ -19,8 +19,6 @@ const CategoriesPage = () => {
         })
     }, [])
 
-    console.log(data);
-
     return (
         <div>
             {

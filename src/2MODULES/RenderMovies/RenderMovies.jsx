@@ -9,7 +9,7 @@ const RenderMovies = ({ data }) => {
         <div className={cl.listMovies}>
             {
                 data.map(movie => {
-                    return <Card img={movie.img} title={movie.title} inSub={movie.inSub} key={movie.id} />;
+                    return <Card img={movie.img} title={movie.title} inSub={movie.inSub} key={movie.id} rating={movie.rating} />;
                 })
             }
         </div>

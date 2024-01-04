@@ -3,10 +3,13 @@ import cl from "./Card.module.css"
 
 
 
-const Card = ({ img, title, inSub }) => {
+const Card = ({ img, title, inSub, rating }) => {
+
+
     return ( 
         <div className={cl.cardWrapper}>
             <div className={cl.imgWrapper}>
+                <span>★ {rating.toString().length === 1 ? rating + ".0" : rating}</span>
                 <img src={img} alt="card-img" className={cl.img}/>
             </div>
             <div className={cl.cardDescWrapper}>
