@@ -1,20 +1,27 @@
 import { useSelector } from "react-redux";
 import Registration from "../../../../2MODULES/Auth/Registration/Registration";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useLayoutEffect } from "react";
 
 // Проверяет зарегестрирован ли пользователь
 const AuthPage = () => {
     const currentUser = useSelector(state => state.currentUser.user);
     const navigate = useNavigate();
+    const locationState = useLocation();
+    const prevRef = locationState.state;
 
     useLayoutEffect(() => {
         if(currentUser) {
-            navigate(-1)
+            if (prevRef) {
+                navigate(prevRef.slice(1), {replace: true})
+            } else {
+                navigate('/', {replace: true})
+            }
         }
+        // eslint-disable-next-line
     }, [currentUser])
 
-    return currentUser ? <Navigate to='..' replace={true}/> : <Registration />;
+    return <Registration />;
 };
 
 export default AuthPage;
