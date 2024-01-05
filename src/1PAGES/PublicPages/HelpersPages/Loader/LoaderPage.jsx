@@ -1,6 +1,6 @@
 import { Outlet } from "react-router";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { auth } from "../../../../FireBase/FireBase";
 import { logOutUser, loginUser, setLoading } from "../../../../features/currentUserSlice/currentUserSlice";
 import { onAuthStateChanged } from "firebase/auth";
@@ -11,7 +11,6 @@ import FooterForFirstPage from "../../../../2MODULES/FooterForFirstPage/FooterFo
 
 const LoaderPage = () => {
     const userLoading = useSelector(state => state.currentUser.isLoading);
-    const [domLoading, setDomLoading] = useState(true);
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -31,8 +30,6 @@ const LoaderPage = () => {
             dispatch(setLoading(false));
         });
 
-        // Загрузка DOM элементов завершена
-        setDomLoading(false);
 
         return () => {
             unscribe()
@@ -42,7 +39,7 @@ const LoaderPage = () => {
 
     return (
         <>
-            {userLoading || domLoading ?
+            {userLoading ?
                 <div className={cl.container}>
                     <MainSpinner />
                 </div>

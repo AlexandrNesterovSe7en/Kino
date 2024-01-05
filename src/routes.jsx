@@ -8,6 +8,7 @@ import SignInPage from './1PAGES/PublicPages/HelpersPages/Auth/SignInPage';
 import CategoryPage from './1PAGES/PrivatePages/Categories/CategoryPage/CategoryPage';
 
 // Все роуты проекта находятся здесь
+
 const routes = createHashRouter(
     createRoutesFromElements(
         // Main Page - Главная страница, public route

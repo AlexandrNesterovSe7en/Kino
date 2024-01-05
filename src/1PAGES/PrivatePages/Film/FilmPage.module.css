@@ -1,0 +1,19 @@
+.img{
+    position: absolute;
+    object-fit: cover;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 400px;
+}
+.container__img{
+    position: absolute;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    background-color: #b9b9b984;
+}
+.container {
+    width: 100vw;
+}

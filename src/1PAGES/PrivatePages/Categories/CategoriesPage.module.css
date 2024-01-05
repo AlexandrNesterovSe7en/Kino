@@ -1,19 +1,16 @@
-
-
 .categoriesPageWrapper {
     display: flex;
     justify-content: center;
     margin: 80px 0 60px 0;
     width: 100%;
- }
- 
- .categoriesPageWrapperInset {
-     display: flex;
-     flex-direction: column;
-     width: 90%;
-     gap: 30px;
- }
+}
 
- .categoryTitle {
+.categoriesPageWrapperInset {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    gap: 30px;
+}
+.categoryTitle {
     font-size: 33px;
- }
+}

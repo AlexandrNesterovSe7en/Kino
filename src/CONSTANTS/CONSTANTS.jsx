@@ -16,6 +16,7 @@ export const TRANSLATOR_RU_TO_EN = {
 
 // Переводчик с английского на русский
 export const TRANSLATOR_EN_TO_RU = {
+    "Fantazy": "Фэнтези",
     "Serials": "Сериалы",
     "Fighters": "Боевики",
     "Comedies": "Комедии",

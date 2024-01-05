@@ -14,12 +14,15 @@
     display: flex;
     gap: 20px;
 }
-.signIng{
-    flex-basis: 60px;
-} 
-.helperForCenter{
+
+.signIng {
     flex-basis: 60px;
 }
+
+.helperForCenter {
+    flex-basis: 60px;
+}
+
 .logOut {
     color: #b4b4b4;
     border: none;
@@ -32,12 +35,16 @@
 .logOut:hover {
     color: white;
 }
+.header_burger body{
+    overflow: hidden;
+}
 
 @media (max-width:630px) {
-    .helperForCenter{
+    .helperForCenter {
         display: none;
     }
-    .header_burger{
+
+    .header_burger {
         display: block;
         position: fixed;
         right: 20px;
@@ -46,8 +53,9 @@
         height: 20px;
         z-index: 3;
     }
+
     .header_burger::before,
-    .header_burger::after{
+    .header_burger::after {
         content: '';
         background-color: #b4b4b4;
         position: absolute;
@@ -56,13 +64,16 @@
         left: 0;
         transition: all 0.3s ease 0s;
     }
-    .header_burger::after{
+
+    .header_burger::after {
         bottom: 0;
     }
-    .header_burger::before{
+
+    .header_burger::before {
         top: 0;
     }
-    .header_burger span{
+
+    .header_burger span {
         position: absolute;
         background-color: #b4b4b4;
         left: 0;
@@ -71,21 +82,26 @@
         top: 9px;
         transition: all 0.3s ease 0s;
     }
-    .header_burger.active::before{
+
+    .header_burger.active::before {
         transform: rotate(45deg);
         top: 9px;
     }
-    .header_burger.active::after{
+
+    .header_burger.active::after {
         transform: rotate(-45deg);
         bottom: 9px;
     }
-    .header_burger.active span{
+
+    .header_burger.active span {
         transform: scale(0);
     }
-    .navigation{
+
+    .navigation {
         flex-direction: column;
     }
-    .navBar{
+
+    .navBar {
         position: fixed;
         top: -68px;
         left: 0px;
@@ -99,27 +115,28 @@
         transform: translateY(-400px);
         transition: all 0.3s ease 0s;
     }
-    .header_burger.active ~ .navBar{
+
+    .header_burger.active~.navBar {
         transform: translateY(0px);
     }
 }
 
 
-.searchBox{
+.searchBox {
     width: fit-content;
     height: fit-content;
     position: relative;
-  }
+}
 
-  .searchBox svg {
+.searchBox svg {
     fill: #b4b4b4;
-  }
+}
 
-  .searchBox:hover svg {
+.searchBox:hover svg {
     fill: white;
-  }
+}
 
-  .inputSearch{
+.inputSearch {
     width: 0;
     height: 0;
     position: absolute;
@@ -133,13 +150,15 @@
     background: transparent;
     font-weight: 700;
     letter-spacing: 1px;
-  }
-  .inputSearch::placeholder{
-    color:rgb(188, 188, 188);
+}
+
+.inputSearch::placeholder {
+    color: rgb(188, 188, 188);
     font-size: 15px;
     font-weight: 700;
-  }
-  .btnSearch{
+}
+
+.btnSearch {
     width: 50px;
     height: 50px;
     border-style: none;
@@ -151,11 +170,12 @@
     position: absolute;
     right: -38px;
     bottom: -39px;
-    color:#ffffff ;
-    background-color:transparent;
-    pointer-events: painted;  
-  }
-  .btnSearch:focus ~ .inputSearch{
+    color: #ffffff;
+    background-color: transparent;
+    pointer-events: painted;
+}
+
+.btnSearch:focus~.inputSearch {
     width: 400px;
     padding: 20px;
     border-radius: 0px;
@@ -163,10 +183,10 @@
     transition: all 500ms ease;
     background: white;
     border-radius: 50px;
-  }
+}
 
 
-  .inputSearch:focus{
+.inputSearch:focus {
     width: 400px;
     padding: 20px;
     border-radius: 0px;
@@ -174,5 +194,4 @@
     transition: all 500ms ease;
     background: white;
     border-radius: 50px;
-  }
-  
+}
