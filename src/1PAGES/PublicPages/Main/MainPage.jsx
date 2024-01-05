@@ -10,7 +10,6 @@ const MainPage = () => {
         <>
             <Header />
             <MainForFirstPage />
-            <MainModal text="Спасибо за подписку!"/>
         </>
     );
 };
