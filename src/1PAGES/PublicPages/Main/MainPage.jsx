@@ -1,5 +1,6 @@
 import Header from "../../../2MODULES/Header/Header";
 import MainForFirstPage from "../../../2MODULES/MainForFirstPage/MainForFirstPage";
+import MainModal from "../../../2MODULES/Modal/MainModal/MainModal";
 
 
 const MainPage = () => {
@@ -9,6 +10,7 @@ const MainPage = () => {
         <>
             <Header />
             <MainForFirstPage />
+            <MainModal text="Спасибо за подписку!"/>
         </>
     );
 };
