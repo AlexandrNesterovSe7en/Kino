@@ -8,7 +8,7 @@ const RenderCategories = ({ data }) => {
         <div className={cl.listCategories}>
             {
                 data.map(category => {
-                    return <Category title={TRANSLATOR_EN_TO_RU[category]} path={TRANSLATOR_EN_TO_RU[category]} />;
+                    return <Category key={category} title={TRANSLATOR_EN_TO_RU[category]} path={TRANSLATOR_EN_TO_RU[category]} />;
                 })
             }
         </div>

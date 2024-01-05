@@ -8,11 +8,13 @@ export const TRANSLATOR_RU_TO_EN = {
     "Тест": "Test",
     "Семейные": "Family",
     "Мелодрамы": "Melodrams",
-    "Ужасы": "Horrors"
+    "Ужасы": "Horrors",
+    "Фэнтези": "Fantazy",
 }
 
 // Переводчик с английского на русский
 export const TRANSLATOR_EN_TO_RU = {
+    "Fantazy": "Фэнтези",
     "Serials": "Сериалы",
     "Fighters": "Боевики",
     "Comedies": "Комедии",

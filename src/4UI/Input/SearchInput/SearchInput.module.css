@@ -1,17 +1,15 @@
-
-
-.searchBox{
+.searchBox {
     width: fit-content;
     height: fit-content;
     position: relative;
-  }
+}
 
-  .searchBox svg {
+.searchBox svg {
     z-index: 999;
     fill: #b4b4b4;
-  }
+}
 
-  .inputSearch{
+.inputSearch {
     font-size: 15px;
     font-weight: 700;
     position: absolute;
@@ -25,24 +23,24 @@
     letter-spacing: 1px;
     transition: all .3s ease-in-out;
     z-index: 1;
-  }
+}
 
-  .inputSearch::placeholder{
-    color:#b4b4b4;
+.inputSearch::placeholder {
+    color: #b4b4b4;
     font-size: 15px;
     font-weight: 700;
-  }
+}
 
-  .inputSearch:focus{
+.inputSearch:focus {
     width: 400px;
     padding: 20px 50px 20px 20px;
     background-color: transparent;
     background: white;
     border-radius: 10px;
     transition: all 500ms ease;
-  }
+}
 
-  .btnSearch{
+.btnSearch {
     position: absolute;
     right: -38px;
     bottom: -39px;
@@ -53,22 +51,18 @@
     border-style: none;
     border-radius: 50%;
     outline: none;
-    color:#ffffff ;
-    background-color:transparent;
-    pointer-events: painted;  
+    color: #ffffff;
+    background-color: transparent;
+    pointer-events: painted;
     cursor: pointer;
     z-index: 999;
-  }
+}
 
 
-  .btnSearch:focus ~ .inputSearch{
+.btnSearch:focus~.inputSearch {
     width: 400px;
     padding: 20px 50px 20px 20px;
     background: white;
     border-radius: 10px;
     transition: all .3s ease;
-  }
-
-
-
-  
+}

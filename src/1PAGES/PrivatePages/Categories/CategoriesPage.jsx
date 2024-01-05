@@ -11,7 +11,6 @@ const CategoriesPage = () => {
     const param = useParams();
     let show = param.category ? true : false;
 
-
     useEffect(() => {
         // Получение данных из БД
         const cat = ref(database, "/Movies/Cateogries");
