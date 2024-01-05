@@ -9,7 +9,7 @@ const MainForFirstPage = () => {
         <main className={cl.mainWrapper}>
             <StringMovies path="/Categories/Сериалы" categoryText="Сериалы" category="Serials"/>
             <StringMovies path="/Categories/Боевики" categoryText="Боевики" category="Fighters"/>
-            <StringMovies path="/Categories/Комедии" categoryText="Комедии" category="Сomedies"/>
+            <StringMovies path="/Categories/Комедии" categoryText="Комедии" category="Comedies"/>
         </main>
     )
 }
