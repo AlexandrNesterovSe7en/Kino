@@ -1,0 +1,49 @@
+.modalBg {
+    position: fixed;
+    bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.45);
+    z-index: 1111;
+}
+
+.modalWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px;
+    min-height: 350px;
+    background: rgba(0, 0, 0, 0.15);
+    box-shadow: 0 8px 10px 0 rgba(138, 138, 138, 0.2);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    z-index: 10;
+    color: whitesmoke;
+}
+
+
+.modalWrapper h3 {
+    font-size: 24px;
+    color: #f7f7f7;
+}
+
+.closeIcon {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 25px;
+    top: 25px;
+    fill: #b4b4b4;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.closeIcon:hover {
+    fill: white;
+}

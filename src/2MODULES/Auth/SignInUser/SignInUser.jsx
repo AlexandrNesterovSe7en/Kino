@@ -29,7 +29,7 @@ const SignInUser = () => {
             <MainInput onChange={(e) => setEmail(e.target.value)} type='text' placeholder='Email' className={cl.signInInput}/>
             <MainInput onChange={(e) => setPassword(e.target.value)} type='password' placeholder='Password' className={cl.signInInput}/>
             <MainButton onClick={handleLogin} className={cl.signInButton}>Войти</MainButton>
-            <p className={cl.p_Registration__Alternate_Join}>Нет аккаунта? <Link to='/signUp'>Зарегестрируйтесь</Link></p>
+            <p className={cl.p_Registration__Alternate_Join}>Нет аккаунта? <Link to='/signUp'>Зарегестрируйтесь!</Link></p>
         </form>
     )
 };

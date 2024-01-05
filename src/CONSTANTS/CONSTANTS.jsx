@@ -10,6 +10,8 @@ export const TRANSLATOR_RU_TO_EN = {
     "Мелодрамы": "Melodrams",
     "Ужасы": "Horrors",
     "Фэнтези": "Fantazy",
+    "Фантастика": "Fantastic",
+    "Драмы": "Dramas"
 }
 
 // Переводчик с английского на русский
@@ -23,5 +25,8 @@ export const TRANSLATOR_EN_TO_RU = {
     "Test": "Тест",
     "Family": "Семейные",
     "Melodrams": "Мелодрамы",
-    "Horrors": "Ужасы"
+    "Horrors": "Ужасы",
+    "Fantazy": "Фэнтези",
+    "Fantastic": "Фантастика",
+    "Dramas": "Драмы"
 }

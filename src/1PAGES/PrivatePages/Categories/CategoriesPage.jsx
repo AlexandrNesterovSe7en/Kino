@@ -27,7 +27,7 @@ const CategoriesPage = () => {
                     :
                     <div className={cl.categoriesPageWrapper}>
                         <div className={cl.categoriesPageWrapperInset}>
-                            <h2>Категории</h2>
+                            <h2 className={cl.categoryTitle}>Категории</h2>
                             <RenderCategories data={data}/>
                         </div>
                     </div>

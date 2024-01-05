@@ -6,8 +6,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;
-    height: 200px;
+    width: 195px;
+    height: 195px;
     border: 3px solid rgba(29, 121, 210, 0.7);
     border-radius: 30px;
     transition: all 0.4s ease;
@@ -19,7 +19,7 @@
 
 .titleWrapper h2 {
     font-weight: 700;
-    font-size: 20px;
+    font-size: 27px;
     color: rgb(220, 220, 220);
     transition: all 0.2s ease;
 }
