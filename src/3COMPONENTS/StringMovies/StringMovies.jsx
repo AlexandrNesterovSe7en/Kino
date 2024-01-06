@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import SeparateCategoryButton from "../../4UI/Buttons/SeparateCategoryButton/SeparateCategoryButton"
 import cl from "./StringMovies.module.css";
-import { limitToFirst, onValue, query, ref } from "firebase/database";
+import { limitToFirst, onValue, orderByChild, query, ref } from "firebase/database";
 import { database } from "../../FireBase/FireBase";
 import RenderMovies from "../../2MODULES/RenderMovies/RenderMovies";
 
