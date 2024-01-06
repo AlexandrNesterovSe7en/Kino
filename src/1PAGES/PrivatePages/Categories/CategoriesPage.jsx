@@ -4,20 +4,12 @@ import { Outlet, useParams } from "react-router-dom";
 import { database } from "../../../FireBase/FireBase"
 import RenderCategories from "../../../2MODULES/RenderCategories/RenderCategories";
 import cl from "./CategoriesPage.module.css";
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
 const CategoriesPage = () => {
 
-    const [data, setData] = useState([]);
     const param = useParams();
     let show = param.category ? true : false;
-
-    useEffect(() => {
-        // Получение данных из БД
-        const cat = ref(database, "/Movies/Cateogries");
-        onValue(cat, snapshot => {
-            setData(Object.keys(snapshot.val()));
-        })
-    }, [])
 
     return (
         <div>
@@ -28,7 +20,7 @@ const CategoriesPage = () => {
                     <div className={cl.categoriesPageWrapper}>
                         <div className={cl.categoriesPageWrapperInset}>
                             <h2 className={cl.categoryTitle}>Категории</h2>
-                            <RenderCategories data={data}/>
+                            <RenderCategories />
                         </div>
                     </div>
             }

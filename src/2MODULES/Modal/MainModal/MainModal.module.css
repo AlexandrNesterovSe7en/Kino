@@ -17,7 +17,7 @@
     padding: 1.5rem;
     z-index: 10;
     color: whitesmoke;
-    animation: 0.2s ease modalAnim;
+    animation: 0.3s ease modalAnim;
 }
 
 
@@ -34,7 +34,6 @@
     top: 25px;
     fill: #b4b4b4;
     cursor: pointer;
-    transition: all 0.2s ease;
 }
 
 .closeIcon:hover {
@@ -47,5 +46,14 @@
     }
     100%{
         transform: scale(1);
+    }
+}
+
+@keyframes modalAnim1 {
+    100%{
+        transform: scale(1);
+    }
+    0%{
+        transform: scale(0);
     }
 }
