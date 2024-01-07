@@ -4,6 +4,7 @@ import cl from "./StringMovies.module.css";
 import { limitToFirst, onValue, query, ref } from "firebase/database";
 import { database } from "../../FireBase/FireBase";
 import RenderMovies from "../../2MODULES/RenderMovies/RenderMovies";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 
 const StringMovies = ({ path, categoryText, category }) => {
@@ -19,12 +20,12 @@ const StringMovies = ({ path, categoryText, category }) => {
         // eslint-disable-next-line
     }, [])
 
-    
     return (
         <div className={cl.stringMoviesWrapper}>
-            <SeparateCategoryButton path={path} category={categoryText}/>
+            <SeparateCategoryButton path={path} category={categoryText} />
             <RenderMovies data={data} />
         </div>
+
     )
 }
 

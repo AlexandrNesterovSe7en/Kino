@@ -13,8 +13,8 @@
     color: rgb(209, 209, 209);
 }
 
-.outContacts {
-    color: #737373;
+.ourContacts {
+    color: #7a7a7a
 }
 
 .authors {
@@ -30,6 +30,11 @@
     gap: 5px;
 }
 
-.author a img {
-    width: 25px;
+.icon {
+    transition: all 0.2s ease;
 }
+
+.icon:hover {
+    fill: white;
+}
+
