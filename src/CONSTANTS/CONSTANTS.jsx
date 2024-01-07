@@ -26,7 +26,9 @@ export const TRANSLATOR_EN_TO_RU = {
     "Family": "Семейные",
     "Melodrams": "Мелодрамы",
     "Horrors": "Ужасы",
-    "Fantazy": "Фэнтези",
     "Fantastic": "Фантастика",
     "Dramas": "Драмы"
 }
+
+// Количество рендуреемых фильмов
+export const LIMIT = 30;

@@ -11,3 +11,7 @@
     width: 90%;
     gap: 30px;
 }
+.loader{
+    display: flex;
+    justify-content: center;
+}

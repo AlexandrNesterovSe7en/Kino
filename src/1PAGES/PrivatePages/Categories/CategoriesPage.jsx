@@ -8,24 +8,8 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 
 const CategoriesPage = () => {
 
-    const param = useParams();
-    let show = param.category ? true : false;
+    return <Outlet />
 
-    return (
-        <div>
-            {
-                show ?
-                    <Outlet />
-                    :
-                    <div className={cl.categoriesPageWrapper}>
-                        <div className={cl.categoriesPageWrapperInset}>
-                            <h2 className={cl.categoryTitle}>Категории</h2>
-                            <RenderCategories />
-                        </div>
-                    </div>
-            }
-        </div>
-    );
 };
 
 export default CategoriesPage;
