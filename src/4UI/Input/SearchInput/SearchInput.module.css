@@ -87,4 +87,14 @@
     border-radius: 10px;
     z-index: 999;
     padding: 10px;
+    animation: 0.3s ease modalAnim;
+}
+
+@keyframes modalAnim {
+    0%{
+        opacity: 0
+    }
+    100%{
+        opacity: 1;
+    }
 }

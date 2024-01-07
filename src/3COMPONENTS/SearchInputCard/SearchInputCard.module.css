@@ -10,6 +10,7 @@
     background: rgb(232, 232, 232, .5);
     transition: all 0.2s ease;
     cursor: pointer;
+    animation: 0.6s ease modalAnim;
 }
 
 .searchInputWrapper:hover {
@@ -49,4 +50,13 @@
     display: flex;
     align-items: flex-start;
     gap: 5px;
+}
+
+@keyframes modalAnim {
+    0%{
+        opacity: 0
+    }
+    100%{
+        opacity: 1;
+    }
 }

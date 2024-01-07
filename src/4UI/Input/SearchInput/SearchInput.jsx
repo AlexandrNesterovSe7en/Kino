@@ -12,10 +12,9 @@ const SearchInput = () => {
     const [titles, setTitles] = useState([]);
     const [data, setData] = useState([]);
 
-    function hasValue(movie) {
-        data.find(obj => {
-            return obj.title === movie.title;
-        })
+    function clearData() {
+            setData([]);
+            setTitles([]);
     }
 
     useEffect(() => {
@@ -29,16 +28,16 @@ const SearchInput = () => {
                     return null;
                 }
                 else if (el.title.toLowerCase().includes(inputValue.toLowerCase()) &&
-                    inputValue.includes(" ") &&
+                    // inputValue.includes(" ") &&
                     inputValue !== " " &&
                     !titles.includes(el.title)) {
-                    setData(prev => [...prev, el])
+                    setData(prev => [el, ...prev])
                     setTitles(prev => [...prev, el.title]);
                 }
 
                 if (el.title.toLowerCase().includes(inputValue.toLowerCase()) &&
                     titles.includes(el.title)) {
-                    setData(prev => prev.filter(e => !data.includes(e.title)))
+                    setData(prev => prev.filter(e => !titles.includes(e.title)))
                     setTitles(prev => prev.filter(e => !titles.includes(e.title)))
                 }
                 // if (el.title.toLowerCase().includes(inputValue.toLowerCase()) &&
@@ -47,13 +46,13 @@ const SearchInput = () => {
                 //     setData(prev => prev.filter(e => !e.includes(inputValue)));
                 //     setTitles(prev => prev.filter(e => !e.includes(inputValue)));
                 // }
-                return null;
             })
         })
+        return clearData;
     }, [inputValue])
 
-    console.log(titles)
-    console.log(data);
+    // console.log(titles)
+    // console.log(data);
 
     return (
         <div className={cl.searchInputWrapper}>
