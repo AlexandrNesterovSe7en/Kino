@@ -1,0 +1,52 @@
+
+
+.searchInputWrapper {
+    display: flex;
+    gap: 10px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid rgb(197, 197, 197);
+    width: 100%;
+    background: rgb(232, 232, 232, .5);
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.searchInputWrapper:hover {
+    background: rgb(191, 191, 191, .5);
+}
+
+.starIcon {
+    transition: all 0.2s ease;
+}
+
+.searchInputWrapper:hover .starIcon, 
+.searchInputWrapper:hover span {
+    fill: #1D79D2;
+    color: #1D79D2;
+}
+
+.imgWrapper img {
+    border: none;
+    border-radius: 10px;
+    width: 60px;
+}
+
+.descWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    color: black;
+}
+
+.descWrapper span {
+    color: #7c7c7c;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.ratingWrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+}
