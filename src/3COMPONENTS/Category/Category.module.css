@@ -6,7 +6,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 195px;
+    min-width: 200px;
     height: 195px;
     border: 3px solid rgba(29, 121, 210, 0.7);
     border-radius: 30px;
