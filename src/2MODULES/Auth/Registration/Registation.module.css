@@ -7,6 +7,7 @@
     align-items: center;
     justify-content: center;
     font-weight: 700;
+    animation: 0.7s ease regAnim;
 }
 /* Отступ у всех дочерних элементов Контйнера 1-ой вложенности */
 .container_Registration > * {
@@ -28,4 +29,13 @@
 }
 .check{
     background-color: #fff;
+}
+
+@keyframes regAnim {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }

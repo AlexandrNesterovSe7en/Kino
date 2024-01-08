@@ -12,18 +12,9 @@ const InfoAboutSubscribe = () => {
     const [isSub, setIsSub] = useState(false);
     const currentUser = useSelector(state => state.currentUser.user);
 
-    // function isSubscribe() {
-    //     if(currentUser){
-    //         get(ref(database, `Users/${auth.currentUser.uid}/isSubscribe`)).then(snapshot => {
-    //             setIsSub(snapshot.val());
-    //         })
-    //         return isSub;
-    //     }
-    // }
 
-
-    function handleToggleActive(){
-        if(currentUser) {
+    function handleToggleActive() {
+        if (currentUser) {
             setIsActive(prev => !prev)
             set(ref(database, `Users/${auth.currentUser.uid}/isSubscribe`), true)
             get(ref(database, `Users/${auth.currentUser.uid}/isSubscribe`)).then(snapshot => {
@@ -33,7 +24,7 @@ const InfoAboutSubscribe = () => {
     }
 
     useEffect(() => {
-        if(currentUser) {
+        if (currentUser) {
             get(ref(database, `Users/${auth.currentUser.uid}/isSubscribe`)).then(snapshot => {
                 setIsSub(snapshot.val());
             })
@@ -44,7 +35,7 @@ const InfoAboutSubscribe = () => {
         if (isActive) {
             document.body.style.height = '100vh'
             document.body.style.overflow = 'hidden'
-        } else{
+        } else {
             document.body.style.height = null;
             document.body.style.overflow = null;
         }
@@ -58,20 +49,23 @@ const InfoAboutSubscribe = () => {
         <div className={cl.accessWrapper}>
             {
                 isSub ?
-                <>
-                    <h1 className={cl.accessText}>
-                        Вам доступны лучшие сериалы и фильмы
-                    </h1>
-                    <MainModal onClickCallback={handleToggleActive} className={isActive ? cl.active : undefined} text="Спасибо за подписку!" />
-                </>
-                :
-                <>
-                    <h1 className={cl.accessText}>
-                        Получите доступ ко всем премиум фильмам
-                        и сериалам всего за 149₽
-                    </h1>
-                    <MainButton onClick={() => handleToggleActive()}>Подписаться</MainButton>
-                </>
+
+                    <div className={cl.infoWrapper}>
+                        <h1 className={cl.accessText}>
+                            Вам доступны лучшие сериалы и фильмы
+                        </h1>
+                        <MainModal onClickCallback={handleToggleActive} className={isActive ? cl.active : undefined} text="Спасибо за подписку!" />
+                    </div>
+                    :
+                    <div className={cl.infoWrapper1}>
+                        <h1 className={cl.accessText}>
+                            Получите доступ ко всем премиум фильмам
+                            и сериалам всего за 149₽
+                        </h1>
+                        <MainButton onClick={() => handleToggleActive()}>Подписаться</MainButton>
+                    </div>
+
+
             }
         </div>
     )

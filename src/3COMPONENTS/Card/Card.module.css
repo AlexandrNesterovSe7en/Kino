@@ -3,6 +3,7 @@
     flex-direction: column;
     gap: 10px;
     width: 158px;
+    animation: 0.7s ease cardAnim;
 }
 
 .cardDescWrapper {
@@ -51,5 +52,14 @@
     color: #1D79D2;
     font-weight: 700;
     font-size: 14px;
+}
+
+@keyframes cardAnim {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 

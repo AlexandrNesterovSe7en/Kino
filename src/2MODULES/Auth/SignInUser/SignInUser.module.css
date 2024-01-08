@@ -7,6 +7,7 @@
     align-items: center;
     justify-content: center;
     font-weight: 700;
+    animation: 0.7s ease signInAnim;
 }
 /* Отступ у всех дочерних элементов Контйнера 1-ой вложенности */
 .container_Registration > * {
@@ -46,4 +47,13 @@
 
 .signInButton {
     padding: max(12px, 0.18vw) max(20px, 4.12vw);
+}
+
+@keyframes signInAnim {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
