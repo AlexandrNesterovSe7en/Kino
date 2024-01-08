@@ -5,6 +5,7 @@ const currentUserSlice = createSlice({
     initialState: {
         user: null,
         isLoading: true,
+        isSubscribe: false
     },
     reducers: {
         // Вход в аккаунт
@@ -19,6 +20,10 @@ const currentUserSlice = createSlice({
 
         setLoading: (state, action) => {
             state.isLoading = action.payload;
+        },
+
+        setSubscribe: (state) => {
+            state.isSubscribe = true;
         }
     }
 })

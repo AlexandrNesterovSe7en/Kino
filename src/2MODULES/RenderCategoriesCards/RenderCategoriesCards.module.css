@@ -2,7 +2,7 @@
     padding: 100px 60px 30px 60px;
     display: flex;
     flex-wrap: wrap;
-    gap: 50px;
+    gap: 30px;
 }
 
 .spinner{

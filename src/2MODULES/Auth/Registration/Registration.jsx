@@ -6,6 +6,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../../FireBase/FireBase';
 import { Link } from 'react-router-dom';
 
+
 const Registration = () => {
     const [email, setEmail] = useState(null);
     const [password, setPassword] = useState(null);

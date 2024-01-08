@@ -2,6 +2,9 @@ import { useSelector } from "react-redux";
 import Registration from "../../../../2MODULES/Auth/Registration/Registration";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useLayoutEffect } from "react";
+import { auth } from "../../../../FireBase/FireBase";
+import { database } from "../../../../FireBase/FireBase";
+import { child, push, ref, set } from "firebase/database";
 
 // Проверяет зарегестрирован ли пользователь
 const AuthPage = () => {
@@ -16,6 +19,10 @@ const AuthPage = () => {
                 navigate(prevRef.slice(1), {replace: true})
             } else {
                 navigate('/', {replace: true})
+                set(ref(database, "Users"), {
+                   [auth.currentUser.uid]: "" 
+                })
+                console.log(auth.currentUser.uid)
             }
         }
         // eslint-disable-next-line
