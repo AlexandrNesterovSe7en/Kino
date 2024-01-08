@@ -44,11 +44,13 @@ const LoaderPage = () => {
                     <MainSpinner />
                 </div>
                 :
-                <>
-                    <NavBar />
-                    <Outlet />
+                <div className={cl.mainWrapper}>
+                    <div className={cl.navBarWrapper}>
+                        <NavBar />
+                        <Outlet />
+                    </div>
                     <FooterForFirstPage />
-                </>
+                </div>
             }
         </>
     )
