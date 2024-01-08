@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useLayoutEffect } from "react";
 import { auth } from "../../../../FireBase/FireBase";
 import { database } from "../../../../FireBase/FireBase";
-import { child, push, ref, set } from "firebase/database";
+import { child, push, ref, set, update } from "firebase/database";
 
 // Проверяет зарегестрирован ли пользователь
 const AuthPage = () => {
@@ -19,8 +19,13 @@ const AuthPage = () => {
                 navigate(prevRef.slice(1), {replace: true})
             } else {
                 navigate('/', {replace: true})
-                set(ref(database, "Users"), {
+                // Добавляет юзера в БД
+                update(ref(database, "Users"), {
                    [auth.currentUser.uid]: "" 
+                })
+                // Добавляет юзеру переменную isSubscribe
+                set(ref(database, `Users/${auth.currentUser.uid}`), {
+                    isSubscribe: false
                 })
                 console.log(auth.currentUser.uid)
             }
