@@ -15,5 +15,15 @@
     width: 100%;
     filter: brightness(0.3);
     z-index: -1;
+    animation: 0.7s ease bgImgAnim;
+}
+
+@keyframes bgImgAnim {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 

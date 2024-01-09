@@ -5,7 +5,7 @@
     flex-wrap: wrap;
 }
 .container > div{
-    padding: 25px;
+    gap: 30px;
 }
 
 .spinner{

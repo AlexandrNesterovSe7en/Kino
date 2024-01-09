@@ -71,7 +71,11 @@ const CategoryPage = () => {
                     <RenderMovies data={data} />
                 </div>
             </div>
-            {fetching ? null : <MainSpinner className={cl.loader}/>}
+            {fetching ? null :
+                <div className={cl.spinnerWrapper}>
+                    <MainSpinner className={cl.loader} />
+                </div>
+            }
         </>
     );
 };

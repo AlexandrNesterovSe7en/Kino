@@ -15,6 +15,7 @@
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0px);
+    animation: 0.7s ease categoryAnim;
 }
 
 .titleWrapper h2 {
@@ -26,8 +27,18 @@
 
 .titleWrapper:hover {
     background: rgba(255, 255, 255, 0.10);
+    /* background-image: linear-gradient(to right, rgb(56, 189, 248), rgb(59, 130, 246)); */
 }
 
 .titleWrapper:hover h2 {
     color: white;
+}
+
+@keyframes categoryAnim {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
