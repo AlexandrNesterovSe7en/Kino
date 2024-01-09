@@ -1,8 +1,11 @@
 .container{
     padding: 100px 60px 30px 60px;
     display: flex;
+    align-items: stretch;
     flex-wrap: wrap;
-    gap: 50px;
+}
+.container > div{
+    padding: 25px;
 }
 
 .spinner{

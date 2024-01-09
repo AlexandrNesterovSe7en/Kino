@@ -2,9 +2,20 @@ import cl from "./FilmPage.module.css";
 const FilmPage = () => {
     return (
         <div className={cl.container}>
-            <div className={cl.container__img}>
-                <img className={cl.img} src="https://c4.wallpaperflare.com/wallpaper/675/275/718/joker-2019-movie-joker-joaquin-phoenix-actor-men-hd-wallpaper-preview.jpg" alt="" />
+            <div className={cl.imgContainer}>
+                <img src="https://images.iptv.rt.ru/images/c6u842jir4ssllttuk1g.jpg" alt="" />
             </div>
+            <div>
+                Фильмы
+                |
+                [Название фильма]    
+            </div>
+            <div className={cl.contentContainer}>
+                <div>[Название фильима] [рейтинг]</div>
+                <div>[жанр: комедия]</div>
+                <div>[Кнопка смотреть фильм]</div>
+            </div>
+            <div>[Кнопка добавить в избранное]</div>
         </div>
     );
 };
