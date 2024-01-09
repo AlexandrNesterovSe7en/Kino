@@ -27,6 +27,7 @@
 
 .titleWrapper:hover {
     background: rgba(255, 255, 255, 0.10);
+    /* background-image: linear-gradient(to right, rgb(56, 189, 248), rgb(59, 130, 246)); */
 }
 
 .titleWrapper:hover h2 {
