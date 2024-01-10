@@ -1,0 +1,40 @@
+{
+  "files": {
+    "main.css": "/Kino/static/css/main.e4e1a6f5.css",
+    "main.js": "/Kino/static/js/main.1929f5fb.js",
+    "static/css/383.6ac0eadc.chunk.css": "/Kino/static/css/383.6ac0eadc.chunk.css",
+    "static/js/383.acacae23.chunk.js": "/Kino/static/js/383.acacae23.chunk.js",
+    "static/css/518.62ba4cce.chunk.css": "/Kino/static/css/518.62ba4cce.chunk.css",
+    "static/js/518.755e1bfb.chunk.js": "/Kino/static/js/518.755e1bfb.chunk.js",
+    "static/css/610.071b07e3.chunk.css": "/Kino/static/css/610.071b07e3.chunk.css",
+    "static/js/610.57d274fb.chunk.js": "/Kino/static/js/610.57d274fb.chunk.js",
+    "static/css/522.c5225c27.chunk.css": "/Kino/static/css/522.c5225c27.chunk.css",
+    "static/js/522.cf9db2f9.chunk.js": "/Kino/static/js/522.cf9db2f9.chunk.js",
+    "static/css/762.12bd3f6e.chunk.css": "/Kino/static/css/762.12bd3f6e.chunk.css",
+    "static/js/762.773a2ac2.chunk.js": "/Kino/static/js/762.773a2ac2.chunk.js",
+    "static/js/472.dd8a92da.chunk.js": "/Kino/static/js/472.dd8a92da.chunk.js",
+    "static/css/554.c303d82f.chunk.css": "/Kino/static/css/554.c303d82f.chunk.css",
+    "static/js/554.9bf41610.chunk.js": "/Kino/static/js/554.9bf41610.chunk.js",
+    "static/media/bgImg.jpg": "/Kino/static/media/bgImg.c9aa9bf7427b80b46183.jpg",
+    "index.html": "/Kino/index.html",
+    "main.e4e1a6f5.css.map": "/Kino/static/css/main.e4e1a6f5.css.map",
+    "main.1929f5fb.js.map": "/Kino/static/js/main.1929f5fb.js.map",
+    "383.6ac0eadc.chunk.css.map": "/Kino/static/css/383.6ac0eadc.chunk.css.map",
+    "383.acacae23.chunk.js.map": "/Kino/static/js/383.acacae23.chunk.js.map",
+    "518.62ba4cce.chunk.css.map": "/Kino/static/css/518.62ba4cce.chunk.css.map",
+    "518.755e1bfb.chunk.js.map": "/Kino/static/js/518.755e1bfb.chunk.js.map",
+    "610.071b07e3.chunk.css.map": "/Kino/static/css/610.071b07e3.chunk.css.map",
+    "610.57d274fb.chunk.js.map": "/Kino/static/js/610.57d274fb.chunk.js.map",
+    "522.c5225c27.chunk.css.map": "/Kino/static/css/522.c5225c27.chunk.css.map",
+    "522.cf9db2f9.chunk.js.map": "/Kino/static/js/522.cf9db2f9.chunk.js.map",
+    "762.12bd3f6e.chunk.css.map": "/Kino/static/css/762.12bd3f6e.chunk.css.map",
+    "762.773a2ac2.chunk.js.map": "/Kino/static/js/762.773a2ac2.chunk.js.map",
+    "472.dd8a92da.chunk.js.map": "/Kino/static/js/472.dd8a92da.chunk.js.map",
+    "554.c303d82f.chunk.css.map": "/Kino/static/css/554.c303d82f.chunk.css.map",
+    "554.9bf41610.chunk.js.map": "/Kino/static/js/554.9bf41610.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e4e1a6f5.css",
+    "static/js/main.1929f5fb.js"
+  ]
+}
