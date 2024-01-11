@@ -50,10 +50,12 @@ const routes = createHashRouter(
                 }} />
 
                 {/* Film Page - Страница Фильма, private route  */}
-                <Route path='/FilmPage' lazy={async function () {
-                    const FilmPage = await import('./1PAGES/PrivatePages/Film/FilmPage');
-                    return { Component: FilmPage.default };
-                }} />
+                <Route path='/FilmPage'>
+                    <Route path=':filmId' lazy={async function () {
+                        const FilmPage = await import('./1PAGES/PrivatePages/Film/FilmPage');
+                        return { Component: FilmPage.default };
+                    }} />
+                </Route>
             </Route>
         </Route>
     )

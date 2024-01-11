@@ -11,28 +11,27 @@ import MainSpinner from "../../../../4UI/Spinner/MainSpinner/MainSpinner";
 const CategoryPage = () => {
 
     const param = useParams();
-    const category = TRANSLATOR_RU_TO_EN[param.category];
+    const category = param.category;
 
 
     const [data, setData] = useState([]);
-    const [nextPage, setNextPage] = useState(0);
+    const [limit, setLimitPage] = useState(LIMIT);
     const [fetching, setFetching] = useState(true);
 
     const throttle = useThrottle();
 
-    const limit = LIMIT;
     const boundary = 200;
 
     const getData = throttle(100, function () {
         setFetching(false)
-        const cat = ref(database, `/Movies/Cateogries/${category}`);
-        const paginationRef = query(cat, limitToFirst(limit), startAt(nextPage), orderByChild('id'))
+        const cat = ref(database, `/Movies`);
+        const paginationRef = query(cat, orderByChild('categories/' + category), limitToFirst(limit))
         onValue(paginationRef, (snapshot) => {
             if (snapshot.exists()) {
-                setNextPage(prev => prev + limit)
-                setData(prev => prev.concat(Object.values(snapshot.val())))
+                setLimitPage(prev => prev + LIMIT)
+                setData(Object.entries(snapshot.val()))
+                setFetching(true)
             }
-            setFetching(true)
         })
     });
 
@@ -43,14 +42,18 @@ const CategoryPage = () => {
             document.body.clientHeight, document.documentElement.clientHeight
         );
         const scrollCurrent = document.documentElement.scrollTop + document.documentElement.clientHeight;
-
+        
+        // костыль чёрт ногу сломит
         if ((scrollHeight - boundary <= scrollCurrent) && fetching) {
-            getData()
+            if (data.length + LIMIT < limit) {
+                return;
+            }
+            getData();
         }
     };
 
     useEffect(() => {
-        handleScrollRequest()
+        getData()
     }, []);
 
     useEffect(() => {
@@ -61,7 +64,7 @@ const CategoryPage = () => {
             window.removeEventListener('scroll', handleScrollRequest)
 
         };
-    }, [nextPage, fetching])
+    }, [limit, fetching])
 
     return (
         <>

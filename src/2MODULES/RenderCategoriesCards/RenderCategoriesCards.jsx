@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import { TRANSLATOR_EN_TO_RU } from "../../CONSTANTS/CONSTANTS";
 import cl from './RenderCategoriesCards.module.css';
 import MainSpinner from "../../4UI/Spinner/MainSpinner/MainSpinner";
+import { onValue, ref } from "@firebase/database";
+import { database } from "../../FireBase/FireBase";
 
 const RenderCategoriesCards = () => {
     const [categories, setCategories] = useState([]);
@@ -10,18 +12,18 @@ const RenderCategoriesCards = () => {
     const translate = TRANSLATOR_EN_TO_RU;
 
     useEffect(() => {
-        fetch('https://kinopoisk-e5c8f-default-rtdb.europe-west1.firebasedatabase.app/Movies/Cateogries.json?shallow=true')
-            .then((respones) => {
-                return respones.json()
-            })
-            .then((respCategories) => {
-                setCategories(Object.keys(respCategories));
-                setFetching(false)
-            })
+        const refCategories = ref(database, 'MovieCategory');
+
+        onValue(refCategories, (snapshot) => {
+            if (snapshot.exists()) {
+                setCategories(Object.values(snapshot.val()));
+                setFetching(false);
+            }
+        }, {onlyOnce: true});
 
     }, [])
 
-    return (
+    return (    
         <div className={cl.container}>
             {
                 fetching ?
@@ -32,7 +34,7 @@ const RenderCategoriesCards = () => {
                     <>
                         {
                             categories.map((title) => {
-                                return <Category key={title} title={translate[title]} path={translate[title]} />
+                                return <Category key={title} title={title} path={title} />
                             })
                         }
                     </>

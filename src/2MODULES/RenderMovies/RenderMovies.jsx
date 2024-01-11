@@ -8,8 +8,8 @@ const RenderMovies = ({ data }) => {
     return (
         <div className={cl.listMovies}>
             {
-                data.map(movie => {
-                    return <Card img={movie.img} title={movie.title} inSub={movie.inSub} key={movie.id} rating={movie.rating} />;
+                data.map(([uid, movie]) => {
+                    return <Card img={movie?.img} title={movie?.title} inSub={movie?.inSub} key={uid} rating={movie?.rating} />;
                 })
             }
         </div>
