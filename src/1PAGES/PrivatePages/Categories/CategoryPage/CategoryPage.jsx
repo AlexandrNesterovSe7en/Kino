@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { LIMIT, TRANSLATOR_RU_TO_EN } from "../../../../CONSTANTS/CONSTANTS";
 import { useEffect, useState } from "react";
-import { limitToFirst, onValue, orderByChild, query, ref, startAt } from "firebase/database";
+import { equalTo, get, limitToFirst, onValue, orderByChild, query, ref, startAt } from "firebase/database";
 import { database } from "../../../../FireBase/FireBase";
 import RenderMovies from "../../../../2MODULES/RenderMovies/RenderMovies";
 import cl from "./CategoryPage.module.css";
@@ -12,6 +12,7 @@ const CategoryPage = () => {
 
     const param = useParams();
     const category = param.category;
+    console.log(category)
 
 
     const [data, setData] = useState([]);
@@ -25,11 +26,11 @@ const CategoryPage = () => {
     const getData = throttle(100, function () {
         setFetching(false)
         const cat = ref(database, `/Movies`);
-        const paginationRef = query(cat, orderByChild('categories/' + category), limitToFirst(limit))
-        onValue(paginationRef, (snapshot) => {
-            if (snapshot.exists()) {
+        const paginationRef = query(cat, orderByChild('categories/' + category), equalTo(true), limitToFirst(limit))
+        get(paginationRef).then(snap => {
+            if(snap.exists()) {
                 setLimitPage(prev => prev + LIMIT)
-                setData(Object.entries(snapshot.val()))
+                setData(Object.entries(snap.val()))
                 setFetching(true)
             }
         })

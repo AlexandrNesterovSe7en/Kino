@@ -20,7 +20,6 @@ const RenderCategoriesCards = () => {
                 setFetching(false);
             }
         }, {onlyOnce: true});
-
     }, [])
 
     return (    

@@ -10,7 +10,12 @@ const Card = ({ img, title, inSub, rating }) => {
         <div className={cl.cardWrapper}>
             {/* Отображение рейтинга и картинки */}
             <div className={cl.imgWrapper}>
-                <span>★ {rating.toString().length === 1 ? rating + ".0" : rating}</span>
+                {
+                    rating ?
+                    <span>★ {rating.toString().length === 1 ? rating + ".0" : rating}</span>
+                    :
+                    <></>
+                }
                 <img src={img} alt="card-img" className={cl.img} />
             </div>
 

@@ -56,6 +56,12 @@ const routes = createHashRouter(
                         return { Component: FilmPage.default };
                     }} />
                 </Route>
+
+                {/* Admin Panel  - Админка, private route */}
+                <Route path='/Admin' lazy={async function () {
+                    const AdminPanel = await import('./1PAGES/Admin/AdminPanel/AdminPanel');
+                    return { Component: AdminPanel.default };
+                }} />
             </Route>
         </Route>
     )

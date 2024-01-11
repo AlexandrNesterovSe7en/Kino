@@ -16,7 +16,6 @@ const StringMovies = ({ path, category }) => {
 
         get(queryCat).then(snap => {
             setData(Object.entries(snap.val()));
-            // setData(Object.values(snap.val()))
         })
     }, [])
 

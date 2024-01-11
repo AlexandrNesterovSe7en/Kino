@@ -1,0 +1,71 @@
+
+
+.adminPanelWrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 80px;
+    gap: 20px;
+}
+
+.functionalWrapper {
+    display: flex;
+    gap: 40px;
+    flex-direction: column;
+    border: 4px solid rgb(29, 121, 210, 0.7);
+    border-radius: 20px;
+    padding: 30px;
+    min-width: 700px;
+    box-shadow: 0 0 10px rgba(29, 121, 210, 0.6);
+}
+
+.deleteWrapper, .deleteRepetitionsWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.deleteWrapper h2, .deleteRepetitionsWrapper h2 {
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+.deleteInputWrapper {
+    display: flex;
+    gap: 10px;
+}
+
+
+.deleteInputWrapper input {
+    font-size: 16px;
+    color: white;
+    width: 300px;
+    outline: none;
+    border: none;
+    border-radius: 50px;
+    background: rgba(59, 59, 59, 0.79);
+    padding: 10px 15px;
+}
+
+.deleteInputWrapper button,
+.deleteRepetitionsWrapper button {
+    background: white;
+    color: black;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease
+}
+
+.deleteInputWrapper button:hover, 
+.deleteRepetitionsWrapper button:hover {
+    opacity: 0.8;
+}
+
+.deleteInputWrapper button:active,
+.deleteRepetitionsWrapper button:active {
+    opacity: 1;
+}
