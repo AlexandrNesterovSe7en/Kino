@@ -10,6 +10,7 @@ const RenderMovies = ({ data }) => {
             {
                 data.map(([uid, movie]) => {
                     return <Card img={movie?.img} title={movie?.title} inSub={movie?.inSub} key={uid} rating={movie?.rating} />;
+
                 })
             }
         </div>
