@@ -1,31 +1,32 @@
 import { useEffect, useState } from "react";
 import SeparateCategoryButton from "../../4UI/Buttons/SeparateCategoryButton/SeparateCategoryButton"
 import cl from "./StringMovies.module.css";
-import { limitToFirst, onValue, orderByChild, query, ref } from "firebase/database";
+import { equalTo, get, limitToFirst, onValue, orderByChild, orderByKey, query, ref } from "firebase/database";
 import { database } from "../../FireBase/FireBase";
 import RenderMovies from "../../2MODULES/RenderMovies/RenderMovies";
 
 
-const StringMovies = ({ path, categoryText, category }) => {
+const StringMovies = ({ path, category }) => {
 
     const [data, setData] = useState([]);
 
     useEffect(() => {
-        // Получание 6-ти фильмов из БД
-        const cat = query(ref(database, `/Movies/Cateogries/${category}`), limitToFirst(6));
-        onValue(cat, snapshot => {
-            setData(Object.values(snapshot.val()));
+        const cat = ref(database, 'Movies');
+        const queryCat = query(cat, orderByChild(`categories/${category}`), equalTo(true), limitToFirst(6));
+
+        get(queryCat).then(snap => {
+            setData(Object.entries(snap.val()));
+            // setData(Object.values(snap.val()))
         })
-        // eslint-disable-next-line
     }, [])
 
-    
-    return (
-        <div className={cl.stringMoviesWrapper}>
-            <SeparateCategoryButton path={path} category={categoryText}/>
-            <RenderMovies data={data} />
-        </div>
-    )
+
+return (
+    <div className={cl.stringMoviesWrapper}>
+        <SeparateCategoryButton path={path} category={category} />
+        <RenderMovies data={data} />
+    </div>
+)
 }
 
 export default StringMovies;

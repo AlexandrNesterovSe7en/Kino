@@ -34,6 +34,7 @@
     gap: 5px;
 }
 
-.author a img {
+.iconImg {
     width: 25px;
+    height: 25px;
 }

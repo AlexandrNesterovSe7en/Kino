@@ -12,15 +12,15 @@ const FooterForFirstPage = () => {
             <div className={cl.authors}>
                 <h4 className={cl.author}>
                     Максим 
-                    <a href="https://github.com/kasdfsfen" target="_blank"><img src={github} alt="github" /></a>
-                    <a href="/" target="_blank"><img src={telegram} alt="telegram" /></a>
-                    <a href="https://vk.com/id547351603" target="_blank"><img src={vk} alt="vk" /></a>
+                    <a href="https://github.com/kasdfsfen" target="_blank"><img src={github} alt="github" className={cl.iconImg}/></a>
+                    <a href="/" target="_blank"><img src={telegram} alt="telegram" className={cl.iconImg}/></a>
+                    <a href="https://vk.com/id547351603" target="_blank"><img src={vk} alt="vk" className={cl.iconImg}/></a>
                 </h4>
                 <h4 className={cl.author}>
                     Александр
-                    <a href="https://github.com/zxcPAPASHAzxc" target="_blank"><img src={github} alt="github" /></a>
-                    <a href="/" target="_blank"><img src={telegram} alt="telegram" /></a>
-                    <a href="/" target="_blank"><img src={vk} alt="vk" /></a>
+                    <a href="https://github.com/zxcPAPASHAzxc" target="_blank"><img src={github} alt="github" className={cl.iconImg}/></a>
+                    <a href="/" target="_blank"><img src={telegram} alt="telegram" className={cl.iconImg}/></a>
+                    <a href="/" target="_blank"><img src={vk} alt="vk" className={cl.iconImg}/></a>
                 </h4>
             </div>
         </footer>
