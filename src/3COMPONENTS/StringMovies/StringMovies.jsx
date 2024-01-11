@@ -22,7 +22,7 @@ const StringMovies = ({ path, category }) => {
 
 return (
     <div className={cl.stringMoviesWrapper}>
-        <SeparateCategoryButton path={path} category={category} />
+        <SeparateCategoryButton category={category} />
         <RenderMovies data={data} />
     </div>
 )
