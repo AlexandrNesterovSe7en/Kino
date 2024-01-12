@@ -2,7 +2,7 @@
 import { useState } from "react";
 import cl from "./AdminPanel.module.css";
 import { database } from "../../../FireBase/FireBase";
-import { onValue, ref, remove } from "firebase/database";
+import { limitToLast, onValue, query, ref, remove } from "firebase/database";
 
 
 const AdminPanel = () => {
@@ -54,6 +54,17 @@ const AdminPanel = () => {
             }, 1000)
         })
     }
+
+    function delete500Movies() {
+        const moviesRef = query(ref(database, "Movies"), limitToLast(500))
+
+        onValue(moviesRef, snap => {
+            Object.keys(snap.val()).map(childSnap => {
+                remove(ref(database, `Movies/${childSnap}`))
+                console.log("+");
+            });
+        })
+    }
     
     return (
         <div className={cl.adminPanelWrapper}>
@@ -72,6 +83,10 @@ const AdminPanel = () => {
                     <button onClick={deleteRepetitions}>Удалить повторы</button>
                 </div>
                 <hr />
+                <div>
+                    <h2>Удалить 500 последних записей</h2>
+                    <button onClick={delete500Movies}>Удалить записи</button>
+                </div>
             </div>
         </div>
     );

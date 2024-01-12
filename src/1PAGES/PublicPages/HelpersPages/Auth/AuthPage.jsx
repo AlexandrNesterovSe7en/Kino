@@ -25,7 +25,8 @@ const AuthPage = () => {
                 })
                 // Добавляет юзеру переменную isSubscribe
                 set(ref(database, `Users/${auth.currentUser.uid}`), {
-                    isSubscribe: false
+                    isSubscribe: false,
+                    Favorite: ""
                 })
                 console.log(auth.currentUser.uid)
             }

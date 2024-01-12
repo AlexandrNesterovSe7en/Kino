@@ -19,14 +19,15 @@ const Card = ({ img, title, inSub, rating, uid }) => {
         };
     }, [])
 
-
     return (
         <div className={cl.cardWrapper}>
             {/* Отображение рейтинга и картинки */}
             <div className={cl.imgWrapper}>
                 {
                     rating ?
-                        <span>★ {rating.toString().length === 1 ? rating + ".0" : rating}</span>
+                        <>
+                            <span>★ {rating.toString().length === 1 ? rating + ".0" : rating}</span>
+                        </>
                         :
                         <></>
                 }

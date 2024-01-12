@@ -1,8 +1,8 @@
 import { useParams } from "react-router-dom";
 import cl from "./FilmPage.module.css";
 import { useEffect, useState } from "react";
-import { onValue, ref } from "firebase/database";
-import { database } from "../../../FireBase/FireBase";
+import { get, onValue, ref, remove, set, update } from "firebase/database";
+import { auth, database } from "../../../FireBase/FireBase";
 
 
 
@@ -21,6 +21,25 @@ const FilmPage = () => {
         window.scrollTo(0, 0);
     }, [])
 
+    function addFavotire() {
+        const movieRef = ref(database, `Movies/${param.filmId}`)
+        const favoriteRef = ref(database, `Users/${auth.currentUser.uid}/Favorite`)
+
+        get(favoriteRef).then(snap => {
+                if(snap.hasChild(param.filmId)) {
+                    update(favoriteRef, {
+                        [param.filmId]: null
+                    })
+                }else{
+                    onValue(movieRef, snap => {
+                        update(ref(database, `Users/${auth.currentUser.uid}/Favorite`), {
+                            [param.filmId]: snap.val()
+                        })
+                    })
+                }  
+        })
+    }
+
     localStorage.setItem("bigImg", movie.bigImg);
 
     return (
@@ -38,7 +57,9 @@ const FilmPage = () => {
                 <div>[жанр: комедия]</div>
                 <div>[Кнопка смотреть фильм]</div>
             </div>
-            <div>[Кнопка добавить в избранное]</div>
+            <div>
+                <button onClick={addFavotire}>Добавить в избранное</button>
+            </div>
         </div>
     );
 };

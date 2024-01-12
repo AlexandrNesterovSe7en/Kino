@@ -13,3 +13,14 @@
      width: 90%;
      gap: 30px;
  }
+
+ 
+.listMovies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.listMovies h2 {
+    color: #4e4e4edf;
+}
