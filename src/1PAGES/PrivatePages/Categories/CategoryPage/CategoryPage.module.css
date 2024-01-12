@@ -12,3 +12,9 @@
     gap: 30px;
 }
 
+.spinnerWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}

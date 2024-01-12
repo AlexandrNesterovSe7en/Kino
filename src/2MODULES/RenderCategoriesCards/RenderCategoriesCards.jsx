@@ -5,6 +5,7 @@ import cl from './RenderCategoriesCards.module.css';
 import MainSpinner from "../../4UI/Spinner/MainSpinner/MainSpinner";
 import { onValue, ref } from "@firebase/database";
 import { database } from "../../FireBase/FireBase";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 const RenderCategoriesCards = () => {
     const [categories, setCategories] = useState([]);
@@ -19,16 +20,29 @@ const RenderCategoriesCards = () => {
                 setCategories(Object.values(snapshot.val()));
                 setFetching(false);
             }
-        }, {onlyOnce: true});
+        }, { onlyOnce: true });
     }, [])
 
-    return (    
+    function renderSkeleton() {
+        const skeletonLoaders = []
+
+        for (let i = 0; i < 15; i++) {
+            skeletonLoaders.push(
+            <SkeletonTheme baseColor="#202020" highlightColor="#444">
+                <p>
+                    <Skeleton count={1} width={"195px"} height={"195px"} borderRadius={"30px"} />
+                </p>
+            </SkeletonTheme>)
+        }
+
+        return skeletonLoaders
+    }
+
+    return (
         <div className={cl.container}>
             {
                 fetching ?
-                    <div className={cl.spinner}>
-                        <MainSpinner />
-                    </div>
+                    renderSkeleton()
                     :
                     <>
                         {

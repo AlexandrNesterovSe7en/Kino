@@ -69,6 +69,7 @@ const CategoryPage = () => {
         };
     }, [limit, fetching])
 
+
     return (
         <>
             <div className={cl.categoryPageWrapper}>
