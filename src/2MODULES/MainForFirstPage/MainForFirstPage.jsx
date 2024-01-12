@@ -1,6 +1,4 @@
-import { useEffect, useState } from "react";
 import StringMovies from "../../3COMPONENTS/StringMovies/StringMovies";
-import { auth } from "../../FireBase/FireBase";
 import cl from "./MainForFirstPage.module.css";
 
 

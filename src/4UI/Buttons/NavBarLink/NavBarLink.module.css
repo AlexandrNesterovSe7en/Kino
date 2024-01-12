@@ -15,3 +15,7 @@
     border-bottom: 3px solid #1D79D2;
     color: white;
 }
+
+.active h3 {
+    color: white;
+}
