@@ -18,3 +18,9 @@
     align-items: center;
     width: 100%;
 }
+
+.listMovies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}

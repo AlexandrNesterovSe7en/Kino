@@ -28,11 +28,11 @@ const RenderCategoriesCards = () => {
 
         for (let i = 0; i < 15; i++) {
             skeletonLoaders.push(
-            <SkeletonTheme baseColor="#202020" highlightColor="#444">
-                <p>
-                    <Skeleton count={1} width={"195px"} height={"195px"} borderRadius={"30px"} />
-                </p>
-            </SkeletonTheme>)
+                <div className={cl.skeletonConatiner}>
+                    <SkeletonTheme baseColor="#202020" highlightColor="#444" display="flex">
+                        <Skeleton count={1} width={"195px"} height={"195px"} borderRadius={"30px"} />
+                    </SkeletonTheme>
+                </div>)
         }
 
         return skeletonLoaders

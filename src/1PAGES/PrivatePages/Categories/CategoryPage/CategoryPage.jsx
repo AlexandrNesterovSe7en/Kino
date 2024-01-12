@@ -1,12 +1,12 @@
 import { useParams } from "react-router-dom";
-import { LIMIT, TRANSLATOR_RU_TO_EN } from "../../../../CONSTANTS/CONSTANTS";
+import { LIMIT } from "../../../../CONSTANTS/CONSTANTS";
 import { useEffect, useState } from "react";
-import { equalTo, get, limitToFirst, onValue, orderByChild, query, ref, startAt } from "firebase/database";
+import { equalTo, get, limitToFirst, orderByChild, query, ref } from "firebase/database";
 import { database } from "../../../../FireBase/FireBase";
-import RenderMovies from "../../../../2MODULES/RenderMovies/RenderMovies";
 import cl from "./CategoryPage.module.css";
 import useThrottle from "../../../../HOOKS/useThrottle";
-import MainSpinner from "../../../../4UI/Spinner/MainSpinner/MainSpinner";
+import Card from "../../../../3COMPONENTS/Card/Card";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 const CategoryPage = () => {
 
@@ -28,7 +28,7 @@ const CategoryPage = () => {
         const cat = ref(database, `/Movies`);
         const paginationRef = query(cat, orderByChild('categories/' + category), equalTo(true), limitToFirst(limit))
         get(paginationRef).then(snap => {
-            if(snap.exists()) {
+            if (snap.exists()) {
                 setLimitPage(prev => prev + LIMIT)
                 setData(Object.entries(snap.val()))
                 setFetching(true)
@@ -43,7 +43,7 @@ const CategoryPage = () => {
             document.body.clientHeight, document.documentElement.clientHeight
         );
         const scrollCurrent = document.documentElement.scrollTop + document.documentElement.clientHeight;
-        
+
         // костыль чёрт ногу сломит
         if ((scrollHeight - boundary <= scrollCurrent) && fetching) {
             if (data.length + LIMIT < limit) {
@@ -69,20 +69,46 @@ const CategoryPage = () => {
         };
     }, [limit, fetching])
 
+    function renderSkeleton() {
+        const skeletonLoaders = []
+
+        for (let i = 0; i < 30; i++) {
+            skeletonLoaders.push(
+                <SkeletonTheme baseColor="#202020" highlightColor="#444">
+                    <p>
+                        <Skeleton count={1} width={"158px"} height={"228px"} borderRadius={"10px"} />
+                        <div style={{ marginTop: "10px" }}>
+                            <Skeleton count={1} width={"158px"} height={"20px"} borderRadius={"10px"} />
+                            <div style={{ marginTop: "3px"}}>
+                                <Skeleton count={1} width={"108px"} height={"17px"} borderRadius={"10px"} />
+                            </div>
+                        </div>
+                    </p>
+                </SkeletonTheme>)
+        }
+
+        return skeletonLoaders
+    }
+
 
     return (
         <>
             <div className={cl.categoryPageWrapper}>
                 <div className={cl.categoryPageWrapperInset}>
                     <h2>{param.category}</h2>
-                    <RenderMovies data={data} />
+                    <div className={cl.listMovies}>
+                        {
+                            data.map(([uid, movie]) => {
+                                return <Card uid={uid} img={movie?.img} title={movie?.title} inSub={movie?.inSub} key={uid} rating={movie?.rating} />;
+                            })
+                        }
+                        {
+                            fetching ? null :
+                            renderSkeleton()
+                        }
+                    </div>
                 </div>
             </div>
-            {fetching ? null :
-                <div className={cl.spinnerWrapper}>
-                    <MainSpinner className={cl.loader} />
-                </div>
-            }
         </>
     );
 };

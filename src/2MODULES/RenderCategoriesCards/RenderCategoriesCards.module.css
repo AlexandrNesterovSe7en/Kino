@@ -11,3 +11,9 @@
     display: flex;
     justify-content: center;
 }
+
+.skeletonContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
