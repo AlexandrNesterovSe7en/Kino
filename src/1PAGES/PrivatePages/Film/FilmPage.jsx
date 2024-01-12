@@ -1,9 +1,32 @@
+import { useParams } from "react-router-dom";
 import cl from "./FilmPage.module.css";
+import { useEffect, useState } from "react";
+import { onValue, ref } from "firebase/database";
+import { database } from "../../../FireBase/FireBase";
+
+
+
 const FilmPage = () => {
+
+    const param = useParams();
+    const [movie, setMovie] = useState({})
+
+    useEffect(() => {
+        const movieRef = ref(database, `Movies/${param.filmId}`)
+
+        onValue(movieRef, snap => {
+            setMovie(snap.val())
+        })
+
+        window.scrollTo(0, 0);
+    }, [])
+
+    console.log(movie);
+
     return (
         <div className={cl.container}>
             <div className={cl.imgContainer}>
-                <img src="https://images.iptv.rt.ru/images/c6u842jir4ssllttuk1g.jpg" alt="" />
+                <img src={movie.bigImg} alt="" />
             </div>
             <div>
                 Фильмы

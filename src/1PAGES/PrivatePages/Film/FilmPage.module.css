@@ -22,6 +22,7 @@
     object-fit: cover;
     position: absolute;
 }
+
 .imgContainer::after{
     content: '';
     position: absolute;

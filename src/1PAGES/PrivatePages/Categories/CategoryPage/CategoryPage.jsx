@@ -55,6 +55,8 @@ const CategoryPage = () => {
 
     useEffect(() => {
         getData()
+
+        window.scrollTo(0, 0)
     }, []);
 
     useEffect(() => {

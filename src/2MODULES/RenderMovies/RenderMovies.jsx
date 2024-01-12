@@ -5,12 +5,13 @@ import cl from "./RenderMovies.module.css";
 
 const RenderMovies = ({ data }) => {
 
+    console.log(data);
+
     return (
         <div className={cl.listMovies}>
             {
                 data.map(([uid, movie]) => {
-                    return <Card img={movie?.img} title={movie?.title} inSub={movie?.inSub} key={uid} rating={movie?.rating} />;
-
+                    return <Card uid={uid} img={movie?.img} title={movie?.title} inSub={movie?.inSub} key={uid} rating={movie?.rating} />;
                 })
             }
         </div>

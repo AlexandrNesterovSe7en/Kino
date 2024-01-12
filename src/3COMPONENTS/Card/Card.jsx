@@ -1,9 +1,10 @@
 
+import { Link } from "react-router-dom";
 import cl from "./Card.module.css"
 
 
 
-const Card = ({ img, title, inSub, rating }) => {
+const Card = ({ img, title, inSub, rating, uid }) => {
 
 
     return (
@@ -16,7 +17,9 @@ const Card = ({ img, title, inSub, rating }) => {
                     :
                     <></>
                 }
-                <img src={img} alt="card-img" className={cl.img} />
+                <Link to={`/FilmPage/${uid}`}>
+                    <img src={img} alt="card-img" className={cl.img} />
+                </Link>
             </div>
 
             {/* Отображение названия фильма и его состояние */}

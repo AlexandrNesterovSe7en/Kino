@@ -20,6 +20,7 @@ const StringMovies = ({ path, category }) => {
     }, [])
 
 
+
 return (
     <div className={cl.stringMoviesWrapper}>
         <SeparateCategoryButton category={category} />
