@@ -1,10 +1,23 @@
 
 import { Link } from "react-router-dom";
 import cl from "./Card.module.css"
+import { useEffect } from "react";
 
 
 
 const Card = ({ img, title, inSub, rating, uid }) => {
+
+    useEffect(() => {
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.href = './Card.module.css';
+        link.as = 'cl';
+        document.head.appendChild(link);
+
+        return () => {
+            document.head.removeChild(link);
+        };
+    }, [])
 
 
     return (
@@ -13,9 +26,9 @@ const Card = ({ img, title, inSub, rating, uid }) => {
             <div className={cl.imgWrapper}>
                 {
                     rating ?
-                    <span>★ {rating.toString().length === 1 ? rating + ".0" : rating}</span>
-                    :
-                    <></>
+                        <span>★ {rating.toString().length === 1 ? rating + ".0" : rating}</span>
+                        :
+                        <></>
                 }
                 <Link to={`/FilmPage/${uid}`}>
                     <img src={img} alt="card-img" className={cl.img} />

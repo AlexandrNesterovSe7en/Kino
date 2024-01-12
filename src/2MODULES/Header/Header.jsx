@@ -4,9 +4,12 @@ import InfoAboutSubscribe from "../../3COMPONENTS/InfoAboutSubscribe/InfoAboutSu
 
 
 const Header = () => {
+
+    localStorage.setItem("bgImg", bgImg);
+
     return (
         <header className={cl.header}>
-                <img src={bgImg} alt="bgImg" className={cl.bgImg}/>
+                <img src={localStorage.getItem("bgImg")} alt="bgImg" className={cl.bgImg}/>
                 <InfoAboutSubscribe />
         </header>
     )

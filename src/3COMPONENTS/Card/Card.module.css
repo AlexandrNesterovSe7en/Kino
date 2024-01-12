@@ -3,7 +3,7 @@
     flex-direction: column;
     gap: 10px;
     width: 158px;
-    animation: 0.7s ease cardAnim;
+    animation: 0.5s ease cardAnim;
 }
 
 .cardDescWrapper {

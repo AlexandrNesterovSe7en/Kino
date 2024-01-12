@@ -17,16 +17,26 @@ const StringMovies = ({ path, category }) => {
         get(queryCat).then(snap => {
             setData(Object.entries(snap.val()));
         })
+
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.href = './StringMovies.module.css';
+        link.as = 'cl';
+        document.head.appendChild(link);
+
+        return () => {
+            document.head.removeChild(link);
+        };
     }, [])
 
 
 
-return (
-    <div className={cl.stringMoviesWrapper}>
-        <SeparateCategoryButton category={category} />
-        <RenderMovies data={data} />
-    </div>
-)
+    return (
+        <div className={cl.stringMoviesWrapper}>
+            <SeparateCategoryButton category={category} />
+            <RenderMovies data={data} />
+        </div>
+    )
 }
 
 export default StringMovies;

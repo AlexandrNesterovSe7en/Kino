@@ -7,6 +7,7 @@
     z-index: 0;
     min-height: 90vh;
     padding: 100px 50px 30px 50px;
+    animation: 0.7s ease imgAnim;
 }
 .imgContainer{
     position: absolute;
@@ -21,6 +22,18 @@
     height: 100%;
     object-fit: cover;
     position: absolute;
+    animation: 1s ease imgAnim;
+}
+
+
+
+@keyframes imgAnim {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
 }
 
 .imgContainer::after{

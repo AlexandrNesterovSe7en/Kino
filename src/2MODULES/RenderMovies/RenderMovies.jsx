@@ -5,8 +5,6 @@ import cl from "./RenderMovies.module.css";
 
 const RenderMovies = ({ data }) => {
 
-    console.log(data);
-
     return (
         <div className={cl.listMovies}>
             {

@@ -10,8 +10,8 @@ const MainForFirstPage = () => {
     return (
         <main className={cl.mainWrapper}>
             <StringMovies category="Комедии" />
-            <StringMovies category="Боевики" />
-            <StringMovies category="Драмы" />
+            <StringMovies category="Фантастика" />
+            <StringMovies category="Ужасы" />
         </main>
     )
 }

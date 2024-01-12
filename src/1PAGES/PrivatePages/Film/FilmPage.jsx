@@ -21,12 +21,12 @@ const FilmPage = () => {
         window.scrollTo(0, 0);
     }, [])
 
-    console.log(movie);
+    localStorage.setItem("bigImg", movie.bigImg);
 
     return (
         <div className={cl.container}>
             <div className={cl.imgContainer}>
-                <img src={movie.bigImg} alt="" />
+                <img src={localStorage.getItem("bigImg")} alt=""/>
             </div>
             <div>
                 Фильмы

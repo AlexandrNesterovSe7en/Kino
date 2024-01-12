@@ -1,5 +1,4 @@
 .navBar {
-    margin-top: 20px;
     position: absolute;
     top: 0;
     left: 0;
@@ -7,8 +6,9 @@
     display: flex;
     justify-content: space-between;
     align-items: baseline;
-    padding: 0 50px;
+    padding: 20px 50px;
     z-index: 100;
+    background-image: linear-gradient(to bottom, #111111d6 0%, transparent 100%);
 }
 
 .navigation {
