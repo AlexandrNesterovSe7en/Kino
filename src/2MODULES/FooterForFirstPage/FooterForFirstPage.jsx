@@ -26,7 +26,7 @@ const FooterForFirstPage = () => {
             </div>
             <Link to="/moreInfo" className={cl.moreInfoLink}>
                 <h4 className={cl.moreInfo}>
-                    Подробнее о проекте
+                    Информация о проекте
                     <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>
                 </h4>
             </Link>

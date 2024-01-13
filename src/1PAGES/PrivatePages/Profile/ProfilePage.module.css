@@ -1,0 +1,113 @@
+
+
+.wrapper {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    border: 3px solid grey;
+    width: 700px;
+    border-radius: 40px;
+    padding: 30px;
+}
+
+.userInfo {
+    display: flex;
+    gap: 30px;
+}
+
+.imgBorder {
+    border: 3px solid grey;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.profileImg {
+    width: 200px;
+    height: 200px;
+    background: rgba(128, 128, 128, 0.225);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    font-weight: 700;
+}
+
+.infoWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+label {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.infoString {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.infoString input {
+    background: rgba(128, 128, 128, 0.225);
+    border: none;
+    outline: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+}
+
+.infoString button {
+    padding: 10px;
+    border: none;
+    font-weight: 700;
+    border-radius: 5px;
+}
+
+.inputWrapper {
+    display: flex;
+    gap: 5px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.logOut {
+    display: flex;
+    gap: 10px;
+}
+
+.logOut button {
+    padding: 10px;
+    width: 50%;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    background: rgba(128, 128, 128, 0.225);
+    /* color: rgb(162, 162, 162); */
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.logOutButton {
+    color: rgb(162, 162, 162);
+}
+
+.deleteButton {
+    color: rgb(203, 14, 14);
+}

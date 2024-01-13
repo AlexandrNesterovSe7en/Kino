@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_Слой_1" data-name="Слой 1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 107 28">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: url(#_Безымянный_градиент);
+      }
+
+      .cls-2 {
+        clip-path: url(#clippath);
+      }
+
+      .cls-3 {
+        fill: none;
+      }
+    </style>
+    <clipPath id="clippath">
+      <rect class="cls-3" y="0" width="107" height="28"/>
+    </clipPath>
+    <linearGradient id="_Безымянный_градиент" data-name="Безымянный градиент" x1="79.95" y1="11.36" x2="112.97" y2="23.63" gradientTransform="translate(0 30) scale(1 -1)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ff9532"/>
+      <stop offset=".17" stop-color="#ff8a1c"/>
+      <stop offset=".51" stop-color="#ff5b21"/>
+      <stop offset=".79" stop-color="#ff5a24"/>
+    </linearGradient>
+  </defs>
+  <g class="cls-2">
+    <g>
+      <path d="m81.07,20.24l-6.8-6.73,6.34-6.37c.09-.09.09-.25,0-.34-.01-.01-.02-.02-.04-.03-.04-.03-.09-.04-.13-.04h-6.73l-5.73,5.93v-5.93h-6.13v13.91h6.14v-6.05l5.96,6.06h6.95c.13,0,.24-.1.24-.24,0-.02,0-.03,0-.05,0-.05-.03-.09-.07-.12Zm-28.07-13.5v7.16l-6.74-7.16h-5.83v13.91h5.83v-7.16l6.74,7.16h5.85V6.73h-5.85Zm-29.17,0l-2.84,8.48-2.98-8.48h-6.5l-2.98,8.48-2.84-8.48H.24c-.12,0-.22.09-.24.21,0,.04,0,.08.01.11l4.67,13.6h7.14l2.88-8.15,2.88,8.15h7.13l4.67-13.6c.04-.11-.01-.24-.12-.29-.03-.02-.07-.03-.11-.03h-5.32Zm13.6,0h-6.14v13.91h6.14V6.73h0Z"/>
+      <path class="cls-1" d="m92.8.2l-6.03,6.01c-.27.27-.27.7,0,.97h0s6.51,6.5,6.51,6.5l-6.55,6.53c-.27.27-.27.7,0,.97,0,0,0,0,0,0l6.03,6.01c.2.2.49.26.75.15.08-.03.16-.08.22-.15l13.06-13.02c.27-.27.27-.7,0-.97L93.77.2c-.27-.27-.7-.27-.97,0Z"/>
+    </g>
+  </g>
+</svg>
