@@ -61,7 +61,6 @@ const AdminPanel = () => {
         onValue(moviesRef, snap => {
             Object.keys(snap.val()).map(childSnap => {
                 remove(ref(database, `Movies/${childSnap}`))
-                console.log("+");
             });
         })
     }

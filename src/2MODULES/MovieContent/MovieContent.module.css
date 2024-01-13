@@ -1,13 +1,37 @@
-.contentContainer{
+.contentContainer {
+    max-width: 724px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: start;
     gap: 30px;
 }
-.filmNamgeImg{
+
+.filmNamgeImg {
     max-height: 116px;
     max-width: 330px;
     display: block;
     object-fit: contain;
+}
+
+.rating {
+    display: flex;
+    gap: 10px;
+}
+
+.rating span {
+    color: #1D79D2;
+}
+
+.characteristic {
+    word-spacing: 5px;
+    color: white;
+}
+
+.button {
+    display: flex;
+    align-items: center;
+    fill: white;
+    color: white;
+    gap: 10px;
 }

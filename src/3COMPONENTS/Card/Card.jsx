@@ -1,7 +1,5 @@
-
 import { Link } from "react-router-dom";
 import cl from "./Card.module.css"
-import { useEffect } from "react";
 
 
 

@@ -1,6 +1,5 @@
 import Category from "../../3COMPONENTS/Category/Category";
 import { useEffect, useState } from "react";
-import { TRANSLATOR_EN_TO_RU } from "../../CONSTANTS/CONSTANTS";
 import cl from './RenderCategoriesCards.module.css';
 import { onValue, ref } from "@firebase/database";
 import { database } from "../../FireBase/FireBase";

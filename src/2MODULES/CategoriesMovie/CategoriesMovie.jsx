@@ -1,8 +1,7 @@
 import NavBarLink from "../../4UI/Buttons/NavBarLink/NavBarLink";
 import cl from "./CategoriesMovie.module.css";
 
-const CategoriesMovie = ({ categories, title }) => {
-    const listCategories = categories ? Object.keys(categories) : null;
+const CategoriesMovie = ({ title }) => {
 
     return (
         <div className={cl.container}>

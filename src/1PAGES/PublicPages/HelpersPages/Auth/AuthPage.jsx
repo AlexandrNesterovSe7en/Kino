@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useLayoutEffect } from "react";
 import { auth } from "../../../../FireBase/FireBase";
 import { database } from "../../../../FireBase/FireBase";
-import { child, push, ref, set, update } from "firebase/database";
+import { ref, set, update } from "firebase/database";
 
 // Проверяет зарегестрирован ли пользователь
 const AuthPage = () => {

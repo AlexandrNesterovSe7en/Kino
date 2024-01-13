@@ -1,5 +1,6 @@
 .container{
     display: flex;
+    gap: 80px;
     flex-direction: column;
     position: relative;
     overflow: hidden;
@@ -8,6 +9,9 @@
     min-height: 90vh;
     padding: 100px 50px 30px 50px;
     animation: 0.7s ease imgAnim;
+    color: #b4b4b4;
+    font-size: 16px;
+    font-weight: 600;
 }
 .imgContainer{
     position: absolute;

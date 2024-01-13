@@ -51,6 +51,7 @@ const FavoritePage = () => {
     useEffect(() => {
         getData()
         window.scrollTo(0, 0)
+        // eslint-disable-next-line
     }, []);
 
     useEffect(() => {
@@ -61,6 +62,7 @@ const FavoritePage = () => {
             window.removeEventListener('scroll', handleScrollRequest)
 
         };
+        // eslint-disable-next-line
     }, [limit, fetching])
 
     function renderSkeleton() {

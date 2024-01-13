@@ -54,6 +54,7 @@ const CategoryPage = () => {
     useEffect(() => {
         getData()
         window.scrollTo(0, 0)
+        // eslint-disable-next-line
     }, []);
 
     useEffect(() => {
@@ -64,6 +65,7 @@ const CategoryPage = () => {
             window.removeEventListener('scroll', handleScrollRequest)
 
         };
+        // eslint-disable-next-line
     }, [limit, fetching])
 
     function renderSkeleton() {
