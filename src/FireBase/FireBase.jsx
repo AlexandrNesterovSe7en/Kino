@@ -22,6 +22,6 @@ const firebaseConfig = {
 // eslint-disable-next-line
 const app = initializeApp(firebaseConfig);
 // eslint-disable-next-line
-export const database = getDatabase();
-export const auth = getAuth();
+export const database = getDatabase(app);
+export const auth = getAuth(app);
 

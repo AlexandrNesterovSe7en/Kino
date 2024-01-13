@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { LIMIT } from "../../../../CONSTANTS/CONSTANTS";
 import { useEffect, useState } from "react";
-import { equalTo, get, limitToFirst, orderByChild, query, ref } from "firebase/database";
+import { equalTo, limitToFirst, onValue, orderByChild, query, ref } from "firebase/database";
 import { database } from "../../../../FireBase/FireBase";
 import cl from "./CategoryPage.module.css";
 import useThrottle from "../../../../HOOKS/useThrottle";
@@ -12,8 +12,6 @@ const CategoryPage = () => {
 
     const param = useParams();
     const category = param.category;
-    console.log(category)
-
 
     const [data, setData] = useState([]);
     const [limit, setLimitPage] = useState(LIMIT);
@@ -27,8 +25,8 @@ const CategoryPage = () => {
         setFetching(false)
         const cat = ref(database, `/Movies`);
         const paginationRef = query(cat, orderByChild('categories/' + category), equalTo(true), limitToFirst(limit))
-        get(paginationRef).then(snap => {
-            if (snap.exists()) {
+        onValue(paginationRef, (snap) => {
+            if(snap.exists()) {
                 setLimitPage(prev => prev + LIMIT)
                 setData(Object.entries(snap.val()))
                 setFetching(true)
@@ -55,7 +53,6 @@ const CategoryPage = () => {
 
     useEffect(() => {
         getData()
-
         window.scrollTo(0, 0)
     }, []);
 

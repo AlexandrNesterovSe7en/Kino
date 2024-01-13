@@ -40,12 +40,10 @@ const FilmPage = () => {
         })
     }
 
-    localStorage.setItem("bigImg", movie.bigImg);
-
     return (
         <div className={cl.container}>
             <div className={cl.imgContainer}>
-                <img src={localStorage.getItem("bigImg")} alt=""/>
+                <img src={movie.bigImg} fetchpriority="high" alt="Poster"/>
             </div>
             <div>
                 Фильмы

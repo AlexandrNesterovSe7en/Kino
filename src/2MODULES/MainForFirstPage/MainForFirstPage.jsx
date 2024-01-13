@@ -4,7 +4,6 @@ import cl from "./MainForFirstPage.module.css";
 
 
 const MainForFirstPage = () => {
-
     return (
         <main className={cl.mainWrapper}>
             <StringMovies category="Комедии" limit={6}/>

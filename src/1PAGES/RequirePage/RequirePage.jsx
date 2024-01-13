@@ -14,7 +14,7 @@ const RequirePage = () => {
         // eslint-disable-next-line
     }, [user])
 
-    return <Outlet />
+    return user ? <Outlet /> : null;
 };
 
 export default RequirePage;

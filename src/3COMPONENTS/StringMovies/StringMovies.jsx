@@ -3,7 +3,6 @@ import SeparateCategoryButton from "../../4UI/Buttons/SeparateCategoryButton/Sep
 import cl from "./StringMovies.module.css";
 import { equalTo, get, limitToFirst, orderByChild, query, ref, startAt } from "firebase/database";
 import { database } from "../../FireBase/FireBase";
-import RenderMovies from "../../2MODULES/RenderMovies/RenderMovies";
 import Card from "../Card/Card";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
@@ -24,16 +23,6 @@ const StringMovies = ({ category, limit }) => {
             }
         }, { onclyOnce: true }
         )
-
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.href = './StringMovies.module.css';
-        link.as = 'cl';
-        document.head.appendChild(link);
-
-        return () => {
-            document.head.removeChild(link);
-        };
     }, [])
 
     function renderSkeleton() {

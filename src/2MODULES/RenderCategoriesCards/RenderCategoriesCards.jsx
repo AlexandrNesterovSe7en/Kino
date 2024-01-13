@@ -11,7 +11,6 @@ const RenderCategoriesCards = () => {
     const [categories, setCategories] = useState([]);
     const [fetching, setFetching] = useState(true);
     const [margin, setMargin] = useState(0);
-    const translate = TRANSLATOR_EN_TO_RU;
 
     useEffect(() => {
         const refCategories = ref(database, 'MovieCategory');
@@ -29,7 +28,7 @@ const RenderCategoriesCards = () => {
 
         for (let i = 0; i < 15; i++) {
             skeletonLoaders.push(
-                <div className={cl.skeletonConatiner}>
+                <div key={i} className={cl.skeletonConatiner}>
                     <SkeletonTheme baseColor="#202020" highlightColor="#444" display="flex">
                         <Skeleton count={1} width={"195px"} height={"195px"} borderRadius={"30px"} />
                     </SkeletonTheme>

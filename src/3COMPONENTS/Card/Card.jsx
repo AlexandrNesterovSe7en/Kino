@@ -7,18 +7,6 @@ import { useEffect } from "react";
 
 const Card = ({ img, title, inSub, rating, uid }) => {
 
-    useEffect(() => {
-        const link = document.createElement('link');
-        link.rel = 'preload';
-        link.href = './Card.module.css';
-        link.as = 'cl';
-        document.head.appendChild(link);
-
-        return () => {
-            document.head.removeChild(link);
-        };
-    }, [])
-
     return (
         <div className={cl.cardWrapper}>
             {/* Отображение рейтинга и картинки */}
