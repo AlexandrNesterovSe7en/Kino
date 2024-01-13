@@ -1,0 +1,10 @@
+.container{
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+    font-size: 14px;
+    user-select: none;
+    color: #b4b4b4;
+}

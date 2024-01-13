@@ -61,8 +61,3 @@
 .container > :nth-child(even){
     height: 48px;
 }
-.contentContainer{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}

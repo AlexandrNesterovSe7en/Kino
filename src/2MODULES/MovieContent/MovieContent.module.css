@@ -1,0 +1,13 @@
+.contentContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    gap: 30px;
+}
+.filmNamgeImg{
+    max-height: 116px;
+    max-width: 330px;
+    display: block;
+    object-fit: contain;
+}

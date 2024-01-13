@@ -2,11 +2,11 @@
     text-decoration: none;
 }
 
-.navBarLink h3 {
+.navBarLink{
     color: #b4b4b4;
 }
 
-.navBarLink h3:hover {
+.navBarLink:hover {
     color: white;
 }
 
