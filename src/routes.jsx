@@ -64,10 +64,16 @@ const routes = createHashRouter(
                     }} />
                 </Route>
 
-                {/* Admin Panel  - Админка, private route */}
+                {/* Admin Panel - Админка, private route */}
                 <Route path='/Admin' lazy={async function () {
                     const AdminPanel = await import('./1PAGES/Admin/AdminPanel/AdminPanel');
                     return { Component: AdminPanel.default };
+                }} />
+
+                {/* Profile Page - Профиль, private route */}
+                <Route path='/profilePage' lazy={async function () {
+                    const ProfilePage = await import('./1PAGES/PrivatePages/Profile/ProfilePage');
+                    return { Component: ProfilePage.default };
                 }} />
             </Route>
         </Route>
