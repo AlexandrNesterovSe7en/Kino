@@ -1,10 +1,22 @@
+
+
+
 .container{
-    padding: 100px 60px 30px 60px;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 100px;
+    margin-left: 60px;
+    gap: 50px;
+    transition: all 0.8s ease;
 }
+
+.categoryString {
+    display: flex;
+    gap: 30px;
+    transition: all 1.2s ease;
+}
+
 
 .spinner{
     flex-grow: 1;
@@ -16,4 +28,56 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
+}
+
+.nextButton {
+    position: absolute;
+    right: 0;
+    height: 195px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: -150px 0 20px -100px #111111 inset;
+    border: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: all 0.3s ease;
+    animation: 0.4s ease buttonAnim;
+}
+
+.backButton {
+    position: absolute;
+    left: 0;
+    height: 195px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 150px 0 20px -100px #111111 inset;
+    cursor: pointer;
+    border: none;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    transition: all 0.2s ease;
+    animation: 0.4s ease buttonAnim;
+
+}
+
+.backButton:hover {
+    box-shadow: 160px 0 20px -100px #111111 inset;
+}
+
+.nextButton:hover {
+    box-shadow: -160px 0 20px -100px #111111 inset;
+}
+
+@keyframes buttonAnim {
+    0% {
+        opacity: 0
+    }
+    100% {
+        opacity: 1
+    }
 }

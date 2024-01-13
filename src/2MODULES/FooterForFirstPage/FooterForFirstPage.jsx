@@ -2,6 +2,7 @@ import cl from "./FooterForFirstPage.module.css";
 import github from "../../4UI/Img/githubIcon.png";
 import telegram from "../../4UI/Img/telegramIcon.png";
 import vk from "../../4UI/Img/vkIcon.png";
+import { Link } from "react-router-dom";
 
 
 const FooterForFirstPage = () => {
@@ -23,6 +24,12 @@ const FooterForFirstPage = () => {
                     <a href="/" target="_blank"><img src={vk} alt="vk" className={cl.iconImg}/></a>
                 </h4>
             </div>
+            <Link to="/moreInfo" className={cl.moreInfoLink}>
+                <h4 className={cl.moreInfo}>
+                    Подробнее о проекте
+                    <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 -960 960 960" width="20"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>
+                </h4>
+            </Link>
         </footer>
     )
 }

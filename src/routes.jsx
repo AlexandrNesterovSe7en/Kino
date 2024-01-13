@@ -30,6 +30,13 @@ const routes = createHashRouter(
                     return { Component: SignInPage.default }
                 }}
             />
+            <Route
+                path='/moreInfo'
+                lazy={async function () {
+                    const moreInfo = await import('./1PAGES/PublicPages/HelpersPages/MoreInfo/MoreInfo');
+                    return { Component: moreInfo.default }
+                }}
+            />
 
             <Route element={<RequirePage />}>
                 {/* Categories Page - Страница категории, private route */}

@@ -14,3 +14,9 @@
 .categoryTitle {
     font-size: 33px;
 }
+
+.wrapper {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}

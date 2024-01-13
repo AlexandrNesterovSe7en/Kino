@@ -38,3 +38,22 @@
     width: 25px;
     height: 25px;
 }
+
+.moreInfo {
+    color: white;
+    fill: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.moreInfo:hover {
+    color: #1D79D2;
+    fill: #1D79D2;
+}
+
+.moreInfoLink {
+    text-decoration: none;
+}
