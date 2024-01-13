@@ -1,0 +1,97 @@
+
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+    margin-top: 150px;
+}
+
+.container {
+    width: 435px;
+    line-height: 25px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.kinopoisk {
+    width: 90px;
+}
+
+.wink {
+    font-weight: 900;
+}
+
+.technologies {
+    width: 950px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.iconsWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    width: 100%;
+}
+
+.htmlIconWrapper,
+.cssIconWrapper,
+.jsIconWrapper,
+.reactIconWrapper,
+.reduxIconWrapper,
+.pythonIconWrapper,
+.firebaseIconWrapper,
+.reactRouterIconWrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    border: 2px solid #1D79D2;
+    background: #242424;
+    border-radius: 10px;
+    padding: 20px;
+    font-weight: 900;
+    width: 215px;
+    height: 83px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.htmlIconWrapper:hover,
+.cssIconWrapper:hover,
+.jsIconWrapper:hover,
+.reactIconWrapper:hover,
+.reduxIconWrapper:hover,
+.pythonIconWrapper:hover,
+.firebaseIconWrapper:hover,
+.reactRouterIconWrapper:hover {
+    box-shadow: 0 0 7px #1D79D2;
+}
+
+.htmlIcon,
+.cssIcon,
+.jsIcon,
+.reactIcon,
+.reduxIcon,
+.pythonIcon,
+.firebaseIcon,
+.reactRouterIcon {
+    width: 50px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
