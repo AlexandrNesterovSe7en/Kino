@@ -27,28 +27,28 @@ const MoreInfo = () => {
             <div className={cl.technologies}>
                 <h2>Весь стэк технологий</h2>
                 <div className={cl.iconsWrapper}>
-                    <a href="https://ru.wikipedia.org/wiki/HTML#:~:text=HTML%20(%D0%BE%D1%82%20%D0%B0%D0%BD%D0%B3%D0%BB.%20HyperText%20Markup,%D1%8F%D0%B2%D0%BB%D1%8F%D1%8E%D1%82%D1%81%D1%8F%20%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC%D0%B8%20%D0%B1%D0%BB%D0%BE%D0%BA%D0%B0%D0%BC%D0%B8%20HTML%20%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86" target="_blank">
+                    <a rel="noreferrer" href="https://ru.wikipedia.org/wiki/HTML#:~:text=HTML%20(%D0%BE%D1%82%20%D0%B0%D0%BD%D0%B3%D0%BB.%20HyperText%20Markup,%D1%8F%D0%B2%D0%BB%D1%8F%D1%8E%D1%82%D1%81%D1%8F%20%D1%81%D1%82%D1%80%D0%BE%D0%B8%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D1%8B%D0%BC%D0%B8%20%D0%B1%D0%BB%D0%BE%D0%BA%D0%B0%D0%BC%D0%B8%20HTML%20%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86" target="_blank">
                         <div className={cl.htmlIconWrapper}><img className={cl.htmlIcon} src={htmlIcon} alt="" /> HTML</div>
                     </a>
-                    <a href="https://ru.wikipedia.org/wiki/CSS" target="_blank">
+                    <a rel="noreferrer" href="https://ru.wikipedia.org/wiki/CSS" target="_blank">
                         <div className={cl.cssIconWrapper}><img className={cl.cssIcon} src={cssIcon} alt="" /> CSS</div>
                     </a>
-                    <a href="https://ru.wikipedia.org/wiki/JavaScript" traget="_blank">
+                    <a rel="noreferrer" href="https://ru.wikipedia.org/wiki/JavaScript" traget="_blank">
                         <div className={cl.jsIconWrapper}><img className={cl.jsIcon} src={jsIcon} alt="" /> Java Script</div>
                     </a>
-                    <a href="https://www.python.org/" traget="_blank">
+                    <a rel="noreferrer" href="https://www.python.org/" traget="_blank">
                         <div className={cl.pythonIconWrapper}><img className={cl.pythonIcon} src={pythonIcon} alt="" /> Python</div>
                     </a>
-                    <a href="https://react.dev/" traget="_blank">
+                    <a rel="noreferrer" href="https://react.dev/" traget="_blank">
                         <div className={cl.reactIconWrapper}><img className={cl.reactIcon} src={reactIcon} alt="" /> React</div>
                     </a>
-                    <a href="https://redux.js.org/" traget="_blank">
+                    <a rel="noreferrer" href="https://redux.js.org/" traget="_blank">
                         <div className={cl.reduxIconWrapper}><img className={cl.reduxIcon} src={reduxIcon} alt="" />Redux</div>
                     </a>
-                    <a href="https://firebase.google.com/" traget="_blank">
+                    <a rel="noreferrer" href="https://firebase.google.com/" traget="_blank">
                         <div className={cl.firebaseIconWrapper}><img className={cl.firebaseIcon} src={firebaseIcon} alt="" />Firebase</div>
                     </a>
-                    <a href="https://reactrouter.com/en/main" target="_blank">
+                    <a rel="noreferrer" href="https://reactrouter.com/en/main" target="_blank">
                         <div className={cl.reactRouterIconWrapper}><img className={cl.reactRouterIcon} src={reactRouterIcon} alt="" /> React Router</div>
                     </a>
                 </div>

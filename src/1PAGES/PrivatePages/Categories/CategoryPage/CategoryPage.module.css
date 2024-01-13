@@ -1,8 +1,8 @@
 .categoryPageWrapper {
-   display: flex;
-   justify-content: center;
-   margin: 80px 0 60px 0;
-   width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 80px 0 60px 0;
+    width: 100%;
 }
 
 .categoryPageWrapperInset {
@@ -20,7 +20,7 @@
 }
 
 .listMovies {
+    gap: 60px;
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
 }

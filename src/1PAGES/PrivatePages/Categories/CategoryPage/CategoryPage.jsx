@@ -71,7 +71,7 @@ const CategoryPage = () => {
     function renderSkeleton() {
         const skeletonLoaders = []
 
-        for (let i = 0; i < 30; i++) {
+        for (let i = 0; i < LIMIT; i++) {
             skeletonLoaders.push(
                 <SkeletonTheme key={i} baseColor="#202020" highlightColor="#444">
                     <div>

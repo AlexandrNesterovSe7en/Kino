@@ -31,4 +31,4 @@ export const TRANSLATOR_EN_TO_RU = {
 }
 
 // Количество рендуреемых фильмов
-export const LIMIT = 30;
+export const LIMIT = 18;
