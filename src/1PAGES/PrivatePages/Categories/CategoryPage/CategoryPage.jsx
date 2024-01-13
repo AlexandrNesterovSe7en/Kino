@@ -31,7 +31,7 @@ const CategoryPage = () => {
                 setData(Object.entries(snap.val()))
                 setFetching(true)
             }
-        })
+        }, {onlyOnce: true})
     });
 
     const handleScrollRequest = function () {
