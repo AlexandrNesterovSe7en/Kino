@@ -5,6 +5,7 @@ import cl from "./NavBar.module.css";
 import { signOut } from "firebase/auth";
 import { auth } from "../../FireBase/FireBase";
 import SearchInput from "../../4UI/Input/SearchInput/SearchInput";
+import { Link } from "react-router-dom";
 
 
 
@@ -54,7 +55,7 @@ const NavBar = ({ className }) => {
                 <div className={cl.signIn}>
                     {
                         currentUser ?
-                            <a href="/"><button onClick={logOut} className={cl.logOut}>Выйти</button></a>
+                            <Link to="/"><button onClick={logOut} className={cl.logOut}>Выйти</button></Link>
                             :
                             <NavBarLink path="/signIn" text="Войти" className={cl.signInLink} />
                     }
