@@ -30,7 +30,7 @@ const StringMovies = ({ category, limit }) => {
 
         for (let i = 0; i < limit; i++) {
             skeletonLoaders.push(
-                <SkeletonTheme baseColor="#202020" highlightColor="#444">
+                <SkeletonTheme key={i} baseColor="#202020" highlightColor="#444">
                     <p>
                         <Skeleton count={1} width={"158px"} height={"228px"} borderRadius={"10px"} />
                         <div style={{ marginTop: "10px" }}>
