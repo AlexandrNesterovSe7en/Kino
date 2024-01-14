@@ -22,8 +22,8 @@ const currentUserSlice = createSlice({
             state.isLoading = action.payload;
         },
 
-        setSubscribe: (state) => {
-            state.isSubscribe = true;
+        setSubscribe: (state, action) => {
+            state.isSubscribe = action.payload;
         }
     }
 })

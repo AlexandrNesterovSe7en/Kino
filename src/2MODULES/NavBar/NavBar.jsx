@@ -18,6 +18,8 @@ const NavBar = ({ className }) => {
     const [name, setName] = useState("");
     const [surname, setSurname] = useState("");
     const [isSubscribe, setIsSubscribe] = useState("");
+    const subscribe = useSelector(state => state.currentUser.isSubscribe)
+    
 
     useEffect(() => {
         get(ref(database, `Users/${auth.currentUser.uid}/isSubscribe`))
@@ -71,7 +73,7 @@ const NavBar = ({ className }) => {
                     {
                         currentUser ?
                         <Link to="/profilePage" className={cl.profileLink}>
-                            <div className={cl.profileWrapper} style={{borderColor: isSubscribe ? "#1D79D2" : "grey", boxShadow: isSubscribe ? "0 0 7px #1D79D2" : "0 0 0"}}>
+                            <div className={cl.profileWrapper} style={{borderColor: isSubscribe || subscribe ? "#1D79D2" : "grey", boxShadow: isSubscribe || subscribe ? "0 0 7px #1D79D2" : "0 0 0"}}>
                                 <div className={cl.profileContainer}>
                                     {
                                         !name && !surname && email ? email[0].toUpperCase() :
@@ -83,7 +85,6 @@ const NavBar = ({ className }) => {
                                 </div>
                             </div>
                         </Link>
-                            // <a href="/"><button onClick={logOut} className={cl.logOut}>Выйти</button></a>
                             :
                             <NavBarLink path="/signIn" text="Войти" className={cl.signInLink} />
                     }

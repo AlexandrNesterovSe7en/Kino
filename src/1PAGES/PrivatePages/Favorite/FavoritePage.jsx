@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { auth, database } from "../../../FireBase/FireBase";
 import cl from "./FavoritePage.module.css";
-import { get, ref } from "firebase/database";
+import { child, get, ref } from "firebase/database";
 import Card from "../../../3COMPONENTS/Card/Card";
 import { LIMIT } from "../../../CONSTANTS/CONSTANTS";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
@@ -24,8 +24,13 @@ const FavoritePage = () => {
         const favoriteRef = ref(database, `Users/${auth.currentUser.uid}/Favorite`)
         get(favoriteRef).then(snap => {
             if(snap.exists()) {
+                Object.keys(snap.val()).map(key => {
+                    get(child(ref(database, "Movies"), key))
+                        .then(snap => {
+                            setData(prev => [...prev, [key, snap.val()]]);
+                        })
+                })
                 setLimitPage(prev => prev + LIMIT)
-                setData(Object.entries(snap.val()))
                 setFetching(true)
             }
         })

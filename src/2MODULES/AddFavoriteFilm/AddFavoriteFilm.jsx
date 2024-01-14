@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import MainButton from "../../4UI/Buttons/MainButton/MainButton";
 import cl from './AddFavoriteFilm.module.css';
 import { database } from "../../FireBase/FireBase";
-import { ref, update } from "firebase/database";
+import { child, get, ref, update } from "firebase/database";
 import useThrottle from "../../HOOKS/useThrottle";
 
 const AddFavoriteFilm = ({ idFilm }) => {
@@ -11,9 +11,20 @@ const AddFavoriteFilm = ({ idFilm }) => {
 
     const addFavorite = throttle(1000, function () {
         const r = ref(database, 'Users/' + user.uid + '/Favorite');
-        const updates = {};
-        updates[idFilm] = true;
-        update(r, updates)
+
+        get(r).then(snap => {
+            if(!Object.keys(snap.val()).includes(idFilm)) {
+                const updates = {};
+                updates[idFilm] = true;
+                update(r, updates)
+            }else{
+                update(r, {
+                    [idFilm]: null
+                })
+            }
+        })
+
+        
     })
 
     return (

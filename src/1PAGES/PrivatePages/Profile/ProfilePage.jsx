@@ -4,6 +4,8 @@ import cl from "./ProfilePage.module.css";
 import { get, ref, update } from "firebase/database";
 import { GoogleAuthProvider, deleteUser, reauthenticateWithRedirect, signOut } from "firebase/auth";
 import done from "../../../4UI/Img/done.png";
+import { useDispatch, useSelector } from "react-redux";
+import { setSubscribe } from "../../../features/currentUserSlice/currentUserSlice";
 
 
 
@@ -15,6 +17,8 @@ const ProfilePage = () => {
     const [name, setName] = useState("")
     const [surname, setSurname] = useState("")
     const [email, setEmail] = useState("")
+    const dispatch = useDispatch();
+    const isSub = useSelector(state => state.currentUser.isSubscribe)
 
 
     useEffect(() => {
@@ -81,14 +85,23 @@ const ProfilePage = () => {
             })
         }
     }
+
+    function cancelSub() {
+        dispatch(setSubscribe(false))
+        update(ref(database, `Users/${auth.currentUser.uid}`), {
+            isSubscribe: false
+        }).then(() => {
+            console.log("Подписка успешно отменена", isSub);
+        })
+    }
     
     return (
         <div className={cl.wrapper}>
-            <div className={cl.container} style={{borderColor: isSubscribe ? "#1D79D2" : "grey", boxShadow: isSubscribe ? "0 0 7px #1D79D2" : "0 0 0"}}>
+            <div className={cl.container} style={{borderColor: isSubscribe || isSub ? "#1D79D2" : "grey", boxShadow: isSubscribe || isSub ? "0 0 7px #1D79D2" : "0 0 0"}}>
                 <div className={cl.userInfo}>
                     <div className={cl.profileImgWrapper}>
                         <div className={cl.imgBorder} 
-                                style={{borderColor: isSubscribe ? "#1D79D2" : "grey", boxShadow: isSubscribe ? "0 0 7px #1D79D2" : "0 0 0"}}>
+                                style={{borderColor: isSubscribe || isSub? "#1D79D2" : "grey", boxShadow: isSubscribe || isSub ? "0 0 7px #1D79D2" : "0 0 0"}}>
                             <div className={cl.profileImg}>{
                                 !name && !surname && email ? email[0].toUpperCase() :
                                 name && !surname ? name[0].toUpperCase() :
@@ -133,12 +146,13 @@ const ProfilePage = () => {
                                 <label>Email: <span>{email ? email : null}</span></label>
                             </div>
                             <div>
-                                <label>Подписка: <span style={{color: isSubscribe ? "#1D79D2" : "white"}}>{isSubscribe ? "Активна" : "Не активна"}</span></label>
+                                <label>Подписка: <span style={{color: isSubscribe || isSub ? "#1D79D2" : "white"}}>{isSubscribe || isSub ? "Активна" : "Не активна"}</span></label>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div className={cl.logOut}>
+                    <button className={cl.logOutButton} onClick={cancelSub}>Отменить подписку</button>
                     <button className={cl.logOutButton} onClick={logOut}>Выйти из аккаунта</button>
                     <button className={cl.deleteButton} onClick={deleteAccount}>Удалить аккаунт</button>
                 </div>

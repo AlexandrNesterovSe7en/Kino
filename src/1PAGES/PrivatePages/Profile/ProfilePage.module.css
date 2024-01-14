@@ -6,6 +6,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: 0.7s ease wrapperAnim;
+}
+
+@keyframes wrapperAnim {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .container {

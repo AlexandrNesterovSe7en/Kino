@@ -10,10 +10,21 @@
     font-size: clamp(1.406rem, 0.309rem + 5.488vw, 2.813rem);
     text-align: center;
     max-width: 700px;
+    animation: 0.7s ease textAnim;
+}
+
+@keyframes textAnim {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .active{
     position: fixed;
+    left: 0;
     bottom: 0px;
     display: flex;
     justify-content: center;
