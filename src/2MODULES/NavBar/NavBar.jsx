@@ -22,22 +22,24 @@ const NavBar = ({ className }) => {
     
 
     useEffect(() => {
-        get(ref(database, `Users/${auth.currentUser.uid}/isSubscribe`))
-            .then(snap => {
-                setIsSubscribe(snap.val())
-            })
-        get(ref(database, `Users/${auth.currentUser.uid}/Name`))
-            .then(snap => {
-                setName(snap.val())
-            })
-        get(ref(database, `Users/${auth.currentUser.uid}/Surname`))
-            .then(snap => {
-                setSurname(snap.val())
-            })
-        get(ref(database, `Users/${auth.currentUser.uid}/Email`))
-            .then(snap => {
-                setEmail(snap.val())
-            })
+        if(currentUser) {
+            get(ref(database, `Users/${auth.currentUser.uid}/isSubscribe`))
+                .then(snap => {
+                    setIsSubscribe(snap.val())
+                })
+            get(ref(database, `Users/${auth.currentUser.uid}/Name`))
+                .then(snap => {
+                    setName(snap.val())
+                })
+            get(ref(database, `Users/${auth.currentUser.uid}/Surname`))
+                .then(snap => {
+                    setSurname(snap.val())
+                })
+            get(ref(database, `Users/${auth.currentUser.uid}/Email`))
+                .then(snap => {
+                    setEmail(snap.val())
+                })
+        }
     }, [])
 
     function handleClickActive(e) {
