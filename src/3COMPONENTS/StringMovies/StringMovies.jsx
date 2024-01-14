@@ -62,6 +62,7 @@ const StringMovies = ({ category, limit }) => {
                 }
             </div>
         </div>
+
     )
 }
 

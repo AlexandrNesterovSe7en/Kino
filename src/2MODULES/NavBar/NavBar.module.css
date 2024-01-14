@@ -11,6 +11,17 @@
     background-image: linear-gradient(to bottom, #111111d6 0%, transparent 100%);
 }
 
+.signInLink {
+    color: #b4b4b4;
+    font-size: 18px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.signInLink:hover {
+    color: white;
+}
+
 .navigation {
     display: flex;
     gap: 20px;
