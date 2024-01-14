@@ -6,6 +6,16 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    animation: 0.7s ease wrapperAnim;
+}
+
+@keyframes wrapperAnim {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 .container {
@@ -61,24 +71,36 @@ label {
 
 .infoString input {
     background: rgba(128, 128, 128, 0.225);
-    border: none;
+    border: 1px solid rgb(69, 69, 69);
     outline: none;
-    padding: 10px 15px;
-    border-radius: 5px;
+    padding: 8px 15px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
     color: white;
     font-size: 16px;
+    transition: all 0.4s ease;
+}
+
+.infoString input:hover {
+    border-color: rgb(168, 168, 168);
+}
+
+.infoString button:hover {
+    border-color: rgb(168, 168, 168)
 }
 
 .infoString button {
-    padding: 10px;
-    border: none;
+    padding: 10px 15px;
+    border: 1px solid rgb(69, 69, 69);
     font-weight: 700;
-    border-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    cursor: pointer;
+    transition: all 0.4s ease;
 }
 
 .inputWrapper {
     display: flex;
-    gap: 5px;
 }
 
 .info {
@@ -95,19 +117,37 @@ label {
 .logOut button {
     padding: 10px;
     width: 50%;
-    border: none;
+    border: 1px solid rgb(69, 69, 69);
     border-radius: 10px;
     cursor: pointer;
     background: rgba(128, 128, 128, 0.225);
     /* color: rgb(162, 162, 162); */
     font-weight: 700;
     font-size: 16px;
+    transition: all 0.2s ease;
 }
 
 .logOutButton {
     color: rgb(162, 162, 162);
 }
 
+.logOutButton:hover {
+    border-color: grey;
+}
+
 .deleteButton {
     color: rgb(203, 14, 14);
+}
+
+.deleteButton:hover {
+    border-color: rgb(203, 14, 14);
+}
+
+.inputWrapper p {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.done {
+    width: 13px;
 }

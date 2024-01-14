@@ -4,17 +4,20 @@ import MainButton from "../../4UI/Buttons/MainButton/MainButton";
 import cl from "./InfoAboutSubscribe.module.css";
 import { auth, database } from "../../FireBase/FireBase";
 import { get, onValue, ref, set } from "firebase/database";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setSubscribe } from "../../features/currentUserSlice/currentUserSlice";
 
 
 const InfoAboutSubscribe = () => {
     const [isActive, setIsActive] = useState(false);
     const [isSub, setIsSub] = useState(false);
     const currentUser = useSelector(state => state.currentUser.user);
+    const dispatch = useDispatch()
 
 
     function handleToggleActive() {
         if (currentUser) {
+            dispatch(setSubscribe(true))
             setIsActive(prev => !prev)
             set(ref(database, `Users/${auth.currentUser.uid}/isSubscribe`), true)
             get(ref(database, `Users/${auth.currentUser.uid}/isSubscribe`)).then(snapshot => {

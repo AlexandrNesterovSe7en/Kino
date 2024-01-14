@@ -196,3 +196,48 @@
     background: white;
     border-radius: 50px;
 }
+
+.profileWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    border: 3px solid grey;
+    border-radius: 50%;
+    padding: 2px;
+    animation: 0.7s ease profileAnim;
+    transition: all 0.4s ease;
+}
+
+.profileContainer {
+    min-width: 50px;
+    height: 50px;
+    background: rgb(49, 49, 49);
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+}
+
+.profileContainer:hover {
+    background: rgb(65, 65, 65);
+}
+
+.profileLink {
+    text-decoration: none;
+    color: white;
+}
+
+@keyframes profileAnim {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

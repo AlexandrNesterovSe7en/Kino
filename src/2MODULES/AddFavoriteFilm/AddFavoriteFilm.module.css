@@ -28,3 +28,7 @@
     border-radius: 50%;
     padding: 0;
 }
+
+.circle svg {
+    transition: all 0.2s ease;
+}
