@@ -34,7 +34,7 @@
 }
 
 .imgBorder {
-    border: 3px solid grey;
+    border: 5px solid grey;
     border-radius: 50%;
     padding: 5px;
 }
@@ -85,18 +85,8 @@ label {
     border-color: rgb(168, 168, 168);
 }
 
-.infoString button:hover {
+.infoString .done:hover {
     border-color: rgb(168, 168, 168)
-}
-
-.infoString button {
-    padding: 10px 15px;
-    border: 1px solid rgb(69, 69, 69);
-    font-weight: 700;
-    border-bottom-right-radius: 5px;
-    border-top-right-radius: 5px;
-    cursor: pointer;
-    transition: all 0.4s ease;
 }
 
 .inputWrapper {
@@ -127,20 +117,20 @@ label {
     transition: all 0.2s ease;
 }
 
-.logOutButton {
+.cancelSubButton {
     color: rgb(162, 162, 162);
 }
 
+.cancelSubButton:hover {
+    border-color: rgb(168, 168, 168)
+}
+
+.logOutButton {
+    color: rgb(215, 38, 38);
+}
+
 .logOutButton:hover {
-    border-color: grey;
-}
-
-.deleteButton {
-    color: rgb(203, 14, 14);
-}
-
-.deleteButton:hover {
-    border-color: rgb(203, 14, 14);
+    border-color: rgb(215, 38, 38);
 }
 
 .inputWrapper p {
@@ -148,6 +138,41 @@ label {
     font-size: 18px;
 }
 
-.done {
-    width: 13px;
+.doneButton {
+    padding: 0 5px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 5px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    border: 1px solid rgb(69, 69, 69);
+}
+
+.doneButton:hover {
+    border-color: rgb(168, 168, 168)
+}
+
+.change {
+    border-radius: 5px;
+    padding: 5px;
+    font-weight: 700;
+    border: none;
+}
+
+.surname,
+.name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.name svg,
+.surname svg {
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.name svg:hover,
+.surname svg:hover {
+    fill: rgb(184, 184, 184);
 }

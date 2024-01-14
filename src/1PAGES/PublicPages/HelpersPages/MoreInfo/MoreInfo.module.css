@@ -5,9 +5,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 30px;
+    gap: 40px;
     width: 100%;
     margin-top: 150px;
+    margin-bottom: 130px;
 }
 
 .container {
@@ -98,4 +99,9 @@
 a {
     text-decoration: none;
     color: white;
+}
+
+.firebaseMiniIcon,
+.pythonMiniIcon {
+    width: 20px;
 }

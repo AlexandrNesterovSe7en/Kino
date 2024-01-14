@@ -55,7 +55,7 @@ const InfoAboutSubscribe = () => {
 
                     <div className={cl.infoWrapper}>
                         <h1 className={cl.accessText}>
-                            Вам доступны лучшие сериалы и фильмы
+                            <span>Вы подписаны!</span><br/>Вам доступны лучшие фильмы и сериалы!
                         </h1>
                         <MainModal onClickCallback={handleToggleActive} className={isActive ? cl.active : undefined} text="Спасибо за подписку!" />
                     </div>

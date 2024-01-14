@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import SeparateCategoryButton from "../../4UI/Buttons/SeparateCategoryButton/SeparateCategoryButton"
 import cl from "./StringMovies.module.css";
-import { equalTo, get, limitToFirst, orderByChild, query, ref } from "firebase/database";
+import { equalTo, get, limitToFirst, orderByChild, query, ref, startAt } from "firebase/database";
 import { database } from "../../FireBase/FireBase";
 import Card from "../Card/Card";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
