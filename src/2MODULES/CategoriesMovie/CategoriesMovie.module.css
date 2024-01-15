@@ -6,3 +6,7 @@
     flex-wrap: wrap;
     user-select: none;
 }
+
+.main, .categories {
+    color: white;
+}

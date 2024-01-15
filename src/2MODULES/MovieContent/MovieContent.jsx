@@ -9,7 +9,7 @@ const MovieContent = ({ movieData }) => {
                 <img className={cl.filmNamgeImg} src={movieData.titleImg} fetchpriority="high" alt="Film-Name" />
                 <div className={cl.rating}>
                     <span>
-                        {movieData.rating === '' ? 'none' : movieData.rating}
+                        {movieData.rating === '' ? null : movieData.rating}
                     </span>
                     {movieData.year}
                 </div>

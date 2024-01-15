@@ -22,7 +22,14 @@ const MoreInfo = () => {
             <div className={cl.container}>
                 <h2>О проекте</h2>
                 <h4>Вдохновлением данному проекту послужили сайты <img className={cl.kinopoisk} src={kinopoisk} alt="kinopoisk" /> и  
-                <span className={cl.wink}> WINK</span>, они и легли в основу нашего дизайна.</h4>
+                <span className={cl.wink}> WINK</span>, они и легли в основу 
+                нашего дизайна. Проект создавался в целях получения новых 
+                знаний и оттачивания уже имеющихся навыков, а также для получения 
+                опыта работы в команде. Для нас обоих сайт такой тематики был в новинку, 
+                но с задачей мы справились и результатом остались довольны. В ходе 
+                создания проекта мы познакомились с <img src={firebaseIcon} alt="" className={cl.firebaseMiniIcon} />Firebase, 
+                а также с парсингом на <img src={pythonIcon} alt="" className={cl.pythonMiniIcon}/>Python. Разработка проекта 
+                длилась около месяца.</h4>
             </div>
             <div className={cl.technologies}>
                 <h2>Весь стэк технологий</h2>

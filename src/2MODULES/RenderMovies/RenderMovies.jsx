@@ -1,3 +1,4 @@
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import Card from "../../3COMPONENTS/Card/Card";
 import cl from "./RenderMovies.module.css";
 

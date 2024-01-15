@@ -16,8 +16,8 @@
     color: rgb(209, 209, 209);
 }
 
-.outContacts {
-    color: #737373;
+.ourContacts {
+    color: #7a7a7a
 }
 
 .authors {
@@ -56,3 +56,13 @@
 .moreInfoLink {
     text-decoration: none;
 }
+
+.icon {
+    transition: all 0.2s ease;
+}
+
+.icon:hover {
+    fill: white;
+}
+
+
