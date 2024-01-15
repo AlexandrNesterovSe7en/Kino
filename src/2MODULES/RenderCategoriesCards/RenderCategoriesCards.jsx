@@ -9,7 +9,8 @@ import StringMovies from "../../3COMPONENTS/StringMovies/StringMovies";
 const RenderCategoriesCards = () => {
     const [categories, setCategories] = useState([]);
     const [fetching, setFetching] = useState(true);
-    const [margin, setMargin] = useState(0);
+    const [catMargin, setCatMargin] = useState(0);
+    const [movieMargin, setMovieMargin] = useState(0);
 
     useEffect(() => {
         const refCategories = ref(database, 'MovieCategory');
@@ -38,18 +39,26 @@ const RenderCategoriesCards = () => {
     }
 
     function next() {
-        setMargin(prev => prev - (margin === 0 ? 1360 : 680))
+        setCatMargin(prev => prev - 820)
     }
 
     function back() {
-        setMargin(prev => prev + (margin > -1300 ? 680 : 1360))
+        setCatMargin(prev => prev + 820)
+    }
+    
+    function next1() {
+        setMovieMargin(prev => prev - 820)
+    }
+
+    function back1() {
+        setMovieMargin(prev => prev + 820)
     }
 
     return (
         <>
             {
                 <div className={cl.container} >
-                    <div className={cl.categoryString} style={{ marginLeft: `${margin}px` }}>
+                    <div className={cl.categoryString} style={{ marginLeft: `${catMargin}px` }}>
                     {
                         fetching ?
                             renderSkeleton()
@@ -61,7 +70,7 @@ const RenderCategoriesCards = () => {
                                     })
                                 }
                                 {
-                                    margin > -1400 ?
+                                    catMargin > -1400 ?
                                         <div className={cl.nextButton} onClick={next}>
                                             <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" width="35" fill="white"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" /></svg>
                                         </div>
@@ -69,7 +78,7 @@ const RenderCategoriesCards = () => {
                                         null
                                 }
                                 {
-                                    margin < 0 ?
+                                    catMargin < 0 ?
                                         <div className={cl.backButton} onClick={back}>
                                             <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" width="35" fill="white"><path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" /></svg>
                                         </div>
@@ -81,9 +90,25 @@ const RenderCategoriesCards = () => {
 
                     }
                     </div>
-                    <div className={cl.recommendation}>
-                        <StringMovies category="Комедии" limit={7}/>
-                    </div>
+                        <div className={cl.recommendation} style={{marginLeft: `${movieMargin}px`}}>
+                            <StringMovies category="Рекомендуем" limit={14} movieMargin={movieMargin}/>
+                        </div>
+                        {
+                            movieMargin > -820 ?
+                                <div className={cl.nextButton1} onClick={next1}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" width="35" fill="white"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z" /></svg>
+                                </div>
+                                    :
+                                null
+                        }
+                        {
+                            movieMargin < 0 ?
+                                <div className={cl.backButton1} onClick={back1}>
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="35" viewBox="0 -960 960 960" width="35" fill="white"><path d="M560-240 320-480l240-240 56 56-184 184 184 184-56 56Z" /></svg>
+                                </div>
+                                :
+                                null
+                        }
                 </div>
             }
         </>

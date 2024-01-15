@@ -18,30 +18,43 @@ const AddFavoriteFilm = ({ idFilm }) => {
         const r = ref(database, "Users/" + user.uid + "/Favorite")
 
         get(r).then(snap => {
-            if(Object.keys(snap.val()).includes(idFilm)) {
-                setIsHave(true);
-            }else{
-                setIsHave(false);
+            if(snap.exists()) {
+                if(Object.keys(snap.val()).includes(idFilm)) {
+                    setIsHave(true);
+                }else{
+                    setIsHave(false);
+                }
             }
         })
     }, [])
 
     const addFavorite = throttle(1000, function () {
         const r = ref(database, 'Users/' + user.uid + '/Favorite');
+        const r1 = ref(database, "Users/" + user.uid)
 
         get(r).then(snap => {
-            if(!Object.keys(snap.val()).includes(idFilm)) {
-                const updates = {};
-                updates[idFilm] = true;
-                update(r, updates)
-                setIsHave(true);
-            }else{
-                update(r, {
-                    [idFilm]: null
-                })
-                setIsHave(false);
+            if(snap.exists()) {
+                if(!Object.keys(snap.val()).includes(idFilm)) {
+                    const updates = {};
+                    updates[idFilm] = true;
+                    update(r, updates)
+                    setIsHave(true);
+                }else{
+                    update(r, {
+                        [idFilm]: null
+                    })
+                    get(r1).then(snap => {
+                        if(!Object.keys(snap.val()).includes("Favorite")) {
+                            update(r1, {
+                                Favorite: ""
+                            })
+                        }
+                    })
+                    setIsHave(false);
+                }
             }
         })
+
 
         
     })

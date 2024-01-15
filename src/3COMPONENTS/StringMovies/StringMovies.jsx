@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import SeparateCategoryButton from "../../4UI/Buttons/SeparateCategoryButton/SeparateCategoryButton"
 import cl from "./StringMovies.module.css";
-import { equalTo, get, limitToFirst, orderByChild, query, ref, startAt } from "firebase/database";
+import { endAt, equalTo, get, limitToFirst, limitToLast, orderByChild, query, ref, startAt } from "firebase/database";
 import { database } from "../../FireBase/FireBase";
 import Card from "../Card/Card";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 
-const StringMovies = ({ category, limit }) => {
+const StringMovies = ({ category, limit, movieMargin }) => {
 
     const [data, setData] = useState([]);
     const [fetching, setFetching] = useState(true);
@@ -15,8 +15,9 @@ const StringMovies = ({ category, limit }) => {
     useEffect(() => {
         const cat = ref(database, 'Movies');
         const queryCat = query(cat, orderByChild(`categories/${category}`), equalTo(true), limitToFirst(limit));
+        const recCat = query(cat, orderByChild("rating"), endAt('9.2'), limitToLast(limit))
 
-        get(queryCat).then(snap => {
+        get(category === "Рекомендуем" ? recCat : queryCat).then(snap => {
             if (snap.exists) {
                 setData(Object.entries(snap.val()));
                 setFetching(false);
@@ -49,8 +50,8 @@ const StringMovies = ({ category, limit }) => {
 
     return (
         <div className={cl.stringMoviesWrapper}>
-            <SeparateCategoryButton category={category} />
-            <div className={cl.listMovies}>
+            <SeparateCategoryButton category={category} className={category === "Рекомендуем" ? cl.rec : null} movieMargin={category === "Рекомендуем" ? movieMargin : null}/>
+            <div className={cl.listMovies} style={{flexWrap: category === "Рекомендуем" ? "nowrap" : "wrap"}}>
                 {
                     fetching
                         ?

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { auth, database } from "../../../FireBase/FireBase";
 import cl from "./ProfilePage.module.css";
-import { get, ref, update } from "firebase/database";
+import { get, ref, set, update } from "firebase/database";
 import { EmailAuthProvider, GoogleAuthProvider, deleteUser, reauthenticateWithCredential, reauthenticateWithRedirect, signInWithEmailLink, signOut } from "firebase/auth";
 import { useDispatch, useSelector } from "react-redux";
 import { setSubscribe } from "../../../features/currentUserSlice/currentUserSlice";
@@ -38,7 +38,13 @@ const ProfilePage = () => {
                 setEmail(snap.val())
             })
 
-    })
+    }, [])
+
+    useEffect(() => {
+    }, [isSubscribe])
+
+    
+
 
     function logOut() {
         // Отвечает за выход из аккаунта
@@ -87,9 +93,10 @@ const ProfilePage = () => {
         }
     }
 
-    function cancelSub() {
+    async function cancelSub() {
+        setIsSubscribe(false);
         dispatch(setSubscribe(false))
-        update(ref(database, `Users/${auth.currentUser.uid}`), {
+        await update(ref(database, `Users/${auth.currentUser.uid}`), {
             isSubscribe: false
         }).then(() => {
             console.log("Подписка успешно отменена", isSub);
