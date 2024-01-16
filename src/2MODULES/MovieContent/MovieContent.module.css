@@ -1,5 +1,4 @@
 .contentContainer {
-    max-width: 724px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -7,9 +6,13 @@
     gap: 30px;
 }
 
+.contentContainer>div {
+    max-width: 600px;
+}
+
 .filmNamgeImg {
-    max-height: 116px;
-    max-width: 330px;
+    max-height: clamp(1.063rem, 0.536rem + 2.632vw, 1.688rem);
+    max-width: clamp(16.875rem, 13.191rem + 18.421vw, 21.25rem);
     display: block;
     object-fit: contain;
 }
@@ -34,4 +37,11 @@
     fill: white;
     color: white;
     gap: 10px;
+}
+
+@media (max-width: 1000px) {
+    .contentContainer {
+        align-items: center;
+        text-align: center;
+    }
 }

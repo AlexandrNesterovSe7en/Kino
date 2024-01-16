@@ -1,0 +1,11 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.container p{
+    color: #b4b4b4;
+    font-weight: 600;
+    word-spacing: 3px;
+    line-height: 1.2;
+}

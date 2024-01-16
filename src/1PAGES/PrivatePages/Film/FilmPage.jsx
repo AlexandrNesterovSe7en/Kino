@@ -6,6 +6,8 @@ import { database } from "../../../FireBase/FireBase";
 import CategoriesMovie from "../../../2MODULES/CategoriesMovie/CategoriesMovie";
 import MovieContent from "../../../2MODULES/MovieContent/MovieContent";
 import AddFavoriteFilm from "../../../2MODULES/AddFavoriteFilm/AddFavoriteFilm";
+import DescriptionMovie from "../../../2MODULES/DescriptionMovie/DescriptionMovie";
+import Rating from "../../../2MODULES/Rating/Rating";
 
 
 
@@ -26,21 +28,27 @@ const FilmPage = () => {
         window.scrollTo(0, 0);
     }, [param.filmId])
     if (movie === null) {
-       return <Navigate to='/' replace={true} />
+        return <Navigate to='/' replace={true} />
     }
     return (
         <>
             {fetching ?
                 null
                 :
-                <div className={cl.container}>
-                    <div className={cl.imgContainer}>
-                        <img src={movie.bigImg} fetchpriority="high" alt="Poster" />
+                <>
+                    <div className={cl.container}>
+                        <div className={cl.imgContainer}>
+                            <img src={movie.bigImg} fetchpriority="high" alt="Poster" />
+                        </div>
+                        <CategoriesMovie title={movie?.title} />
+                        <MovieContent movieData={movie} />
+                        <AddFavoriteFilm idFilm={param.filmId} />
                     </div>
-                    <CategoriesMovie title={movie?.title}/>
-                    <MovieContent movieData={movie}/>               
-                    <AddFavoriteFilm idFilm={param.filmId}/>
-                </div>
+                    <div className={cl.container_info}>
+                        <DescriptionMovie movieData={movie} />
+                        <Rating movieData={movie.rating}/>
+                    </div>
+                </>
             }
         </>
     );

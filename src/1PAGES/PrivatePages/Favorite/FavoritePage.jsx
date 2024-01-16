@@ -76,7 +76,7 @@ const FavoritePage = () => {
         for (let i = 0; i < 30; i++) {
             skeletonLoaders.push(
                 <SkeletonTheme key={i} baseColor="#202020" highlightColor="#444">
-                    <p>
+                    <div>
                         <Skeleton count={1} width={"158px"} height={"228px"} borderRadius={"10px"} />
                         <div style={{ marginTop: "10px" }}>
                             <Skeleton count={1} width={"158px"} height={"20px"} borderRadius={"10px"} />
@@ -84,7 +84,7 @@ const FavoritePage = () => {
                                 <Skeleton count={1} width={"108px"} height={"17px"} borderRadius={"10px"} />
                             </div>
                         </div>
-                    </p>
+                    </div>
                 </SkeletonTheme>)
         }
 

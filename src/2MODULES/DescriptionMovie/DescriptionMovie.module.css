@@ -1,0 +1,16 @@
+.container{
+    gap: 50px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 15px;
+}
+.container > div:nth-child(2){
+    flex-basis: 34%;
+    flex-shrink: 0;
+}
+
+@media (max-width: 670px) {
+    .container{
+        flex-direction: column;
+    }
+}

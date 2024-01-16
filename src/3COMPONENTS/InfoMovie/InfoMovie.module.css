@@ -1,0 +1,26 @@
+.container{
+    max-height: 280px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.container div > h3{
+    font-weight: 500;
+    color: #b4b4b4;
+}
+.container_info{
+    display: flex;
+    gap: 30px;
+    align-items: baseline;
+}
+.container_categories{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    text-decoration: none;
+}
+.link h3{
+    font-weight: 500;
+    font-size: 15px;
+    color: white;
+}
