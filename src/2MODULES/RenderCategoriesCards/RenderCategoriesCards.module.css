@@ -30,7 +30,8 @@
     gap: 10px;
 }
 
-.nextButton {
+.nextButton,
+.nextButton1 {
     position: absolute;
     right: 0;
     height: 195px;
@@ -47,7 +48,14 @@
     animation: 0.4s ease buttonAnim;
 }
 
-.backButton {
+.nextButton1 {
+    top: 430px;
+    height: 280px;
+    z-index: 2000;
+}
+
+.backButton,
+.backButton1 {
     position: absolute;
     left: 0;
     height: 195px;
@@ -62,7 +70,12 @@
     border-bottom-right-radius: 10px;
     transition: all 0.2s ease;
     animation: 0.4s ease buttonAnim;
+}
 
+.backButton1 {
+    top: 430px;
+    height: 280px;
+    z-index: 2000;
 }
 
 .backButton:hover {
@@ -80,4 +93,8 @@
     100% {
         opacity: 1
     }
+}
+
+.recommendation {
+    transition: all 1.2s ease;
 }
