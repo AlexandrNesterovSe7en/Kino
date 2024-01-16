@@ -10,11 +10,6 @@
     min-height: 590px;
 }
 
-.show.none {
-    opacity: 0;
-    transition: opacity 0.4s ease;
-}
-
 .show {
     height: 56px;
     position: fixed;

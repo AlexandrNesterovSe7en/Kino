@@ -4,7 +4,6 @@ import cl from "./SeparateCategoryButton.module.css";
 
 // Ссылка на категорию находящаяся на главной странице
 const SeparateCategoryButton = ({ category, className, movieMargin }) => {
-    console.log(movieMargin);
     return ( 
         <Link to={`Categories/${category}`} className={cl.categoryLink + " " + className} style={{marginLeft: movieMargin || movieMargin < 0 ? `${movieMargin + 1640}px` : "0"}}>
             <h2>{category}</h2>
