@@ -5,7 +5,12 @@
 }
 .container p{
     color: #b4b4b4;
+    font-size: 18px;
     font-weight: 600;
     word-spacing: 3px;
     line-height: 1.2;
+}
+
+.container h2 {
+    font-size: 30px;
 }

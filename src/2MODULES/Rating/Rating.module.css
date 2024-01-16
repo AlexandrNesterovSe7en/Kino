@@ -10,18 +10,25 @@
     max-width: 500px;
     padding: 20px 24px 24px;
     user-select: none;
+    transition: all 0.2s ease;
 }
+
 .container > h3 {
+    display: flex;
+    align-items: center;
+    gap: 8px;    
     font-size: 38px;
     color: #1D79D2;
 }
 .container > p {
     font-size: clamp(0.813rem, 0.655rem + 0.789vw, 1rem);
+    font-weight: 700;
 }
 .container:hover{
     background-color: rgba(255 255 255 / 6%);
     cursor: pointer;
 }
-h2{
+.wrapper h2{
     margin-top: 50px;
+    font-size: 30px;
 }

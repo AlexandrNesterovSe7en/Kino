@@ -17,7 +17,7 @@ const InfoMovie = ({ country, categories }) => {
                 <div className={cl.container_categories}>{
                     categoriesArr.map(category => {
                         return (
-                            <NavBarLink key={category} path={'/Categories/' + category} text={category + ','} className={cl.link}/>
+                            <NavBarLink key={category} path={'/Categories/' + category} text={categoriesArr.indexOf(category) === categoriesArr.length - 1 ? category : category + ','} className={cl.link}/>
                         );
                     })
                 }</div>
