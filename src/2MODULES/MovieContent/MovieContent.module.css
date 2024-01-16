@@ -9,6 +9,10 @@
 .contentContainer>div {
     max-width: 600px;
 }
+.contentContainer h2 {
+    color: white;
+    font-size: 30px;
+}
 
 .filmNamgeImg {
     max-height: clamp(6.063rem, 0.536rem + 2.632vw, 1.688rem);
