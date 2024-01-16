@@ -12,6 +12,8 @@ const RenderCategoriesCards = () => {
     const [catMargin, setCatMargin] = useState(0);
     const [movieMargin, setMovieMargin] = useState(0);
 
+    console.log(document.body.style.width);
+
     useEffect(() => {
         const refCategories = ref(database, 'MovieCategory');
 
@@ -39,11 +41,11 @@ const RenderCategoriesCards = () => {
     }
 
     function next() {
-        setCatMargin(prev => prev - 820)
+        setCatMargin(prev => prev - 3420)
     }
 
     function back() {
-        setCatMargin(prev => prev + 820)
+        setCatMargin(prev => prev + 3420)
     }
     
     function next1() {

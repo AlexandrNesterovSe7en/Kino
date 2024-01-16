@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { LIMIT } from "../../../../CONSTANTS/CONSTANTS";
 import { useEffect, useState } from "react";
-import { equalTo, limitToFirst, onValue, orderByChild, query, ref } from "firebase/database";
+import { endAt, equalTo, limitToFirst, onValue, orderByChild, query, ref, startAt } from "firebase/database";
 import { database } from "../../../../FireBase/FireBase";
 import cl from "./CategoryPage.module.css";
 import useThrottle from "../../../../HOOKS/useThrottle";
@@ -23,9 +23,10 @@ const CategoryPage = () => {
 
     const getData = throttle(100, function () {
         setFetching(false)
-        const cat = ref(database, `/Movies`);
+        const cat = ref(database, `Movies`);
         const paginationRef = query(cat, orderByChild('categories/' + category), equalTo(true), limitToFirst(limit))
-        onValue(paginationRef, (snap) => {
+        const recCat = query(cat, orderByChild("rating"), startAt('9.2'), limitToFirst(limit))
+        onValue(category === "Рекомендуем" ? recCat : paginationRef, (snap) => {
             if(snap.exists()) {
                 setLimitPage(prev => prev + LIMIT)
                 setData(Object.entries(snap.val()))
