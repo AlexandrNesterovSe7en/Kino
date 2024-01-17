@@ -25,7 +25,7 @@ const CategoryPage = () => {
         setFetching(false)
         const cat = ref(database, `Movies`);
         const paginationRef = query(cat, orderByChild('categories/' + category), equalTo(true), limitToFirst(limit))
-        const recCat = query(cat, orderByChild("rating"), startAt('9.2'), limitToFirst(limit))
+        const recCat = query(cat, orderByChild("rating"), equalTo('9.2'), limitToFirst(limit))
         onValue(category === "Рекомендуем" ? recCat : paginationRef, (snap) => {
             if(snap.exists()) {
                 setLimitPage(prev => prev + LIMIT)

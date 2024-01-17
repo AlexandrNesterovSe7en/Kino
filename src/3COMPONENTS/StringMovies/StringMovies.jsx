@@ -7,7 +7,7 @@ import Card from "../Card/Card";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 
 
-const StringMovies = ({ category, limit, movieMargin }) => {
+const StringMovies = ({ category, limit }) => {
 
     const [data, setData] = useState([]);
     const [fetching, setFetching] = useState(true);
@@ -50,7 +50,7 @@ const StringMovies = ({ category, limit, movieMargin }) => {
 
     return (
         <div className={cl.stringMoviesWrapper}>
-            <SeparateCategoryButton category={category} className={category === "Рекомендуем" ? cl.rec : null} movieMargin={category === "Рекомендуем" ? movieMargin : null}/>
+            <SeparateCategoryButton category={category} className={category === "Рекомендуем" ? cl.rec : null} />
             <div className={cl.listMovies} style={{flexWrap: category === "Рекомендуем" ? "nowrap" : "wrap"}}>
                 {
                     fetching
