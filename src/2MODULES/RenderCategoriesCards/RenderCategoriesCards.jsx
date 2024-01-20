@@ -55,7 +55,7 @@ const RenderCategoriesCards = () => {
                                 renderSkeleton()
                                 :
                                 <Swiper 
-                                    speed={1200}
+                                    speed={1300}
                                     spaceBetween={"30px"}
                                     rewind={true}
                                     navigation={{
@@ -90,12 +90,12 @@ const RenderCategoriesCards = () => {
                                             spaceBetween: 20
                                         },
                                         1920: {
-                                            slidersPerView: 10,
-                                            slidesPerGroup: 10,
+                                            slidesPerView: 8,
+                                            slidesPerGroup: 8,
                                             spaceBetween: 20
                                         }
                                     }}
-                                    className="mySwiper">
+                                    className="mySwiper1">
                                         <button className="swiper-button-prev"></button>
                                     {
                                         categories.map(title => {

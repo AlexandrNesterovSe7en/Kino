@@ -7,6 +7,7 @@ import Card from "../Card/Card";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { SwiperSlide, Swiper } from "swiper/react";
 import { Navigation } from "swiper/modules";
+import "./StringMovies.css";
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -63,44 +64,55 @@ const StringMovies = ({ category, limit }) => {
                         renderSkeleton()
                         :
                         category === "Рекомендуем" ?
-                        <Swiper  slidesPerView={10}
-                                spaceBetween={"100px"}
+                        <Swiper 
+                                spaceBetween={"30px"}
+                                speed={1300}
                                 rewind={true}
-                                navigation={true}
+                                navigation={{
+                                    prevEl: ".swiper-button-prev",
+                                    nextEl: ".swiper-button-next"
+                                }}
                                 modules={[Navigation]}
                                 breakpoints={{
                                     320: {
                                         slidesPerView: 1,
+                                        slidesPerGroup: 1,
                                         spaceBetween: 10
                                     },
                                     480: {
                                         slidesPerView: 2,
+                                        slidesPerGroup: 2,
                                         spaceBetween: 20
                                     },
                                     768: {
                                         slidesPerView: 3,
+                                        slidesPerGroup: 3,
                                         spaceBetween: 20
                                     },
                                     1024: {
                                         slidesPerView: 5,
+                                        slidesPerGroup: 5,
                                         spaceBetween: 20
                                     },
                                     1440: {
                                         slidesPerView: 7,
+                                        slidesPerGroup: 7,
                                         spaceBetween: 20
                                     },
                                     1920: {
-                                        slidersPerView: 10,
+                                        slidesPerView: 10,
+                                        slidesPerGroup: 10,
                                         spaceBetween: 20
                                     }
                                 }}
-                                slidesPerGroup={1}
-                                className="mySwiper">
+                                className="mySwiper2">
+                                    <button className="swiper-button-prev"></button>
                                         {
                                             data.map(([uid, movie]) => {
                                                 return <SwiperSlide><Card uid={uid} img={movie?.img} title={movie?.title} inSub={movie?.inSub} key={uid} rating={movie?.rating} /></SwiperSlide>;
                                             })
                                         } 
+                                    <button className="swiper-button-next"></button>
                         </Swiper>
                         :
                         <>

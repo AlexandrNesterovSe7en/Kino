@@ -9,6 +9,7 @@
 
 .categoryString {
     transition: all 1.2s ease;
+    margin-bottom: 80px;
 }
 
 
@@ -22,11 +23,6 @@
     display: flex;
     flex-direction: column;
     gap: 10px;
-}
-
-
-.swiper-button-prev {
-    color: white;
 }
 
 .swiperButtonNext {
@@ -82,11 +78,6 @@
     height: 280px;
     z-index: 2000;
 }
-
-.swiper-button-prev:hover {
-    box-shadow: 160px 0 20px -100px #111111 inset;
-}
-
 .nextButton:hover {
     box-shadow: -160px 0 20px -100px #111111 inset;
 }
@@ -98,12 +89,4 @@
     100% {
         opacity: 1
     }
-}
-
-.mySwiper {
-    width: 100%;
-}
-
-.swiper {
-    width: 100%;
 }
