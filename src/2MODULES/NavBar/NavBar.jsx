@@ -67,7 +67,7 @@ const NavBar = ({ className }) => {
                     <NavBarLink path="/" text="Главная" />
                     <NavBarLink path="/Categories" text="Категории" />
                     <NavBarLink path="/FavoritePage" text="Избранное" />
-                    <SearchInput />
+                    {/* <SearchInput /> */}
                 </div>
 
                 {/* Отображение кнопки Войти/Выйти */}
