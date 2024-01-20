@@ -64,10 +64,37 @@ const StringMovies = ({ category, limit }) => {
                         :
                         category === "Рекомендуем" ?
                         <Swiper  slidesPerView={10}
-                                spaceBetween={"10px"}
+                                spaceBetween={"100px"}
                                 rewind={true}
                                 navigation={true}
                                 modules={[Navigation]}
+                                breakpoints={{
+                                    320: {
+                                        slidesPerView: 1,
+                                        spaceBetween: 10
+                                    },
+                                    480: {
+                                        slidesPerView: 2,
+                                        spaceBetween: 20
+                                    },
+                                    768: {
+                                        slidesPerView: 3,
+                                        spaceBetween: 20
+                                    },
+                                    1024: {
+                                        slidesPerView: 5,
+                                        spaceBetween: 20
+                                    },
+                                    1440: {
+                                        slidesPerView: 7,
+                                        spaceBetween: 20
+                                    },
+                                    1920: {
+                                        slidersPerView: 10,
+                                        spaceBetween: 20
+                                    }
+                                }}
+                                slidesPerGroup={1}
                                 className="mySwiper">
                                         {
                                             data.map(([uid, movie]) => {

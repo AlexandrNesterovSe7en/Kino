@@ -1,0 +1,53 @@
+
+
+.swiper-button-prev {
+    position: absolute;
+    left: -10px;
+    top: 22px;
+    height: 195px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 150px 0 20px -100px #111111 inset;
+    border: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: all 0.3s ease;
+    color: white;
+    background: transparent;
+}
+
+
+.swiper-button-prev:hover {
+    box-shadow: 160px 0 20px -100px #111111 inset;
+}
+
+.swiper-button-next {
+    position: absolute;
+    right: -10px;
+    top: 22px;
+    height: 195px;
+    width: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: -150px 0 20px -100px #111111 inset;
+    border: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: all 0.3s ease;
+    color: white;
+    background: transparent;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+    font-size: 27px;
+}
+
+.swiper-button-next:hover {
+    box-shadow: -160px 0 20px -100px #111111 inset;
+}

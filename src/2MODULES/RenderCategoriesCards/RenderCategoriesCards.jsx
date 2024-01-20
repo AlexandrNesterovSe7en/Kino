@@ -7,6 +7,7 @@ import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import StringMovies from "../../3COMPONENTS/StringMovies/StringMovies";
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
+import "./RenderCategoriesCards.css";
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -52,20 +53,58 @@ const RenderCategoriesCards = () => {
                         {
                             fetching ?
                                 renderSkeleton()
-                                : 
-                                <Swiper  slidesPerView={7}
-                                        spaceBetween={"30px"}
-                                        rewind={true}
-                                        navigation={true}
-                                        modules={[Navigation]}
-                                        className="mySwiper">
-                                                {
-                                                    categories.map(title => {
-                                                        return (
-                                                                <SwiperSlide className={cl.swiperSlide}><Category key={title} title={title} path={title} /></SwiperSlide>
-                                                                ) 
-                                                        })
-                                                } 
+                                :
+                                <Swiper 
+                                    speed={1200}
+                                    spaceBetween={"30px"}
+                                    rewind={true}
+                                    navigation={{
+                                        prevEl: ".swiper-button-prev",
+                                        nextEl: ".swiper-button-next"
+                                    }}
+                                    modules={[Navigation]}
+                                    breakpoints={{
+                                        320: {
+                                            slidesPerView: 1,
+                                            slidesPerGroup: 1,
+                                            spaceBetween: 10
+                                        },
+                                        480: {
+                                            slidesPerView: 2,
+                                            slidesPerGroup: 2,
+                                            spaceBetween: 20
+                                        },
+                                        768: {
+                                            slidesPerView: 3,
+                                            slidesPerGroup: 3,
+                                            spaceBetween: 20
+                                        },
+                                        1024: {
+                                            slidesPerView: 4,
+                                            slidesPerGroup: 4,
+                                            spaceBetween: 20
+                                        },
+                                        1440: {
+                                            slidesPerView: 6,
+                                            slidesPerGroup: 6,
+                                            spaceBetween: 20
+                                        },
+                                        1920: {
+                                            slidersPerView: 10,
+                                            slidesPerGroup: 10,
+                                            spaceBetween: 20
+                                        }
+                                    }}
+                                    className="mySwiper">
+                                        <button className="swiper-button-prev"></button>
+                                    {
+                                        categories.map(title => {
+                                            return (
+                                                <SwiperSlide className={cl.swiperSlide}><Category key={title} title={title} path={title} /></SwiperSlide>
+                                            )
+                                        })
+                                    }
+                                        <button className="swiper-button-next"></button>
                                 </Swiper>
                         }
                     </div>
