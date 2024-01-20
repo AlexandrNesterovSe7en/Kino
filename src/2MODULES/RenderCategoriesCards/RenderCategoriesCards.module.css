@@ -8,6 +8,7 @@
 }
 
 .categoryString {
+    gap: 20px;
     transition: all 1.2s ease;
     margin-bottom: 80px;
 }

@@ -15,9 +15,6 @@ import 'swiper/css/navigation';
 const RenderCategoriesCards = () => {
     const [categories, setCategories] = useState([]);
     const [fetching, setFetching] = useState(true);
-    const swiper = useSwiper()
-
-    console.log(document.body.style.width);
 
     useEffect(() => {
         const refCategories = ref(database, 'MovieCategory');
@@ -49,7 +46,7 @@ const RenderCategoriesCards = () => {
         <>
             {
                 <div className={cl.container} >
-                    <div className={cl.categoryString}>
+                    <div className={cl.categoryString} style={{display: fetching ? "flex" : null}}>
                         {
                             fetching ?
                                 renderSkeleton()

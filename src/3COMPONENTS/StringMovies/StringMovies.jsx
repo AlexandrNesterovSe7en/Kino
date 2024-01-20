@@ -57,7 +57,7 @@ const StringMovies = ({ category, limit }) => {
     return (
         <div className={cl.stringMoviesWrapper}>
             <SeparateCategoryButton category={category} className={category === "Рекомендуем" ? cl.rec : null} />
-            <div className={cl.listMovies} style={{flexWrap: category === "Рекомендуем" ? "nowrap" : "wrap"}}>
+            <div className={cl.listMovies} style={{display: fetching ? "flex" : category === "Рекомендуем" ? null : "flex", flexWrap: category === "Рекомендуем" ? "nowrap" : "wrap"}}>
                 {
                     fetching
                         ?
