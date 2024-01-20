@@ -6,6 +6,10 @@ import { database } from "../../FireBase/FireBase";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import StringMovies from "../../3COMPONENTS/StringMovies/StringMovies";
 import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper/modules';
+
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 const RenderCategoriesCards = () => {
     const [categories, setCategories] = useState([]);
@@ -48,23 +52,21 @@ const RenderCategoriesCards = () => {
                         {
                             fetching ?
                                 renderSkeleton()
-                                :
-                                <>
-                                    {
-                                        categories.map((title) => {
-                                            return (
-                                                <Swiper spaceBetween={200}
-                                                    slidesPerView={3}
-                                                    onSlideChange={() => console.log('slide change')}
-                                                    onSwiper={(swiper) => console.log(swiper)}>
-                                                    <SwiperSlide><Category key={title} title={title} path={title} /></SwiperSlide>
-                                                    <button onClick={() => swiper.slideNext()}>next</button>
-                                                </Swiper>
-                                            )
-                                        })
-                                    }
-                                </>
-
+                                : 
+                                <Swiper  slidesPerView={7}
+                                        spaceBetween={"30px"}
+                                        rewind={true}
+                                        navigation={true}
+                                        modules={[Navigation]}
+                                        className="mySwiper">
+                                                {
+                                                    categories.map(title => {
+                                                        return (
+                                                                <SwiperSlide className={cl.swiperSlide}><Category key={title} title={title} path={title} /></SwiperSlide>
+                                                                ) 
+                                                        })
+                                                } 
+                                </Swiper>
                         }
                     </div>
                     <div className={cl.recommendation}>

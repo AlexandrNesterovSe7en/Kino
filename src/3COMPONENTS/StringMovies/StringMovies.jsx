@@ -5,6 +5,11 @@ import { endAt, equalTo, get, limitToFirst, limitToLast, orderByChild, query, re
 import { database } from "../../FireBase/FireBase";
 import Card from "../Card/Card";
 import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import { SwiperSlide, Swiper } from "swiper/react";
+import { Navigation } from "swiper/modules";
+
+import 'swiper/css';
+import 'swiper/css/navigation';
 
 
 const StringMovies = ({ category, limit }) => {
@@ -57,9 +62,27 @@ const StringMovies = ({ category, limit }) => {
                         ?
                         renderSkeleton()
                         :
-                        data.map(([uid, movie]) => {
-                            return <Card uid={uid} img={movie?.img} title={movie?.title} inSub={movie?.inSub} key={uid} rating={movie?.rating} />;
-                        })
+                        category === "Рекомендуем" ?
+                        <Swiper  slidesPerView={10}
+                                spaceBetween={"10px"}
+                                rewind={true}
+                                navigation={true}
+                                modules={[Navigation]}
+                                className="mySwiper">
+                                        {
+                                            data.map(([uid, movie]) => {
+                                                return <SwiperSlide><Card uid={uid} img={movie?.img} title={movie?.title} inSub={movie?.inSub} key={uid} rating={movie?.rating} /></SwiperSlide>;
+                                            })
+                                        } 
+                        </Swiper>
+                        :
+                        <>
+                            {
+                                data.map(([uid, movie]) => {
+                                    return <Card uid={uid} img={movie?.img} title={movie?.title} inSub={movie?.inSub} key={uid} rating={movie?.rating} />;
+                                })
+                            }
+                        </>
                 }
             </div>
         </div>

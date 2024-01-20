@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import { LIMIT } from "../../../../CONSTANTS/CONSTANTS";
 import { useEffect, useState } from "react";
-import { endAt, equalTo, limitToFirst, onValue, orderByChild, query, ref, startAt } from "firebase/database";
+import { equalTo, get, limitToFirst, onValue, orderByChild, query, ref, startAt } from "firebase/database";
 import { database } from "../../../../FireBase/FireBase";
 import cl from "./CategoryPage.module.css";
 import useThrottle from "../../../../HOOKS/useThrottle";
@@ -26,13 +26,22 @@ const CategoryPage = () => {
         const cat = ref(database, `Movies`);
         const paginationRef = query(cat, orderByChild('categories/' + category), equalTo(true), limitToFirst(limit))
         const recCat = query(cat, orderByChild("rating"), equalTo('9.2'), limitToFirst(limit))
-        onValue(category === "Рекомендуем" ? recCat : paginationRef, (snap) => {
-            if(snap.exists()) {
+        if(category === "Рекомендуем") {
+            get(recCat).then(snap => {
                 setLimitPage(prev => prev + LIMIT)
                 setData(Object.entries(snap.val()))
+                console.log(data);
                 setFetching(true)
-            }
-        }, {onlyOnce: true})
+            })
+        }else{
+            onValue(paginationRef, (snap) => {
+                if(snap.exists()) {
+                    setLimitPage(prev => prev + LIMIT)
+                    setData(Object.entries(snap.val()))
+                    setFetching(true)
+                }
+            }, {onlyOnce: true})
+        }
     });
 
     const handleScrollRequest = function () {

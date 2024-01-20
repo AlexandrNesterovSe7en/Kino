@@ -2,20 +2,16 @@
 
 
 .container{
-    display: flex;
-    flex-direction: column;
     align-items: start;
-    margin-top: 130px;
-    margin-left: 60px;
-    gap: 50px;
+    margin: 130px 60px;
     transition: all 0.8s ease;
 }
 
-.categoryString {
+/* .categoryString {
     display: flex;
     gap: 30px;
     transition: all 1.2s ease;
-}
+} */
 
 
 .spinner{
@@ -95,6 +91,10 @@
     }
 }
 
-.recommendation {
-    transition: all 1.2s ease;
+.mySwiper {
+    width: 100%;
+}
+
+.swiper {
+    width: 100%;
 }
